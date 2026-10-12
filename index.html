@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XVII Congreso Nacional de Mastozoología — Programa</title>
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=zilla-slab:400,600,700&display=swap" rel="stylesheet">
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="program.js"></script>
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --card: #ffffff;
+    --ink: #2b2b2b;
+    --muted: #6b6b6b;
+    --accent: #7a4a21;
+    --border: #e4dfd4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Zilla Slab', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 1.2rem 1.5rem;
+  }
+  header h1 { margin: 0; font-size: 1.35rem; }
+  header p { margin: .25rem 0 0; font-size: .9rem; opacity: .9; }
+  .container { max-width: 960px; margin: 0 auto; padding: 1rem 1rem 4rem; }
+
+  .filters {
+    display: flex; flex-wrap: wrap; gap: .6rem;
+    margin: 1rem 0; align-items: center;
+  }
+  .filters input[type="search"] {
+    flex: 1 1 220px;
+    padding: .5rem .7rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+  }
+  .filters select {
+    padding: .5rem;
+    font-size: .95rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+    background: #fff;
+  }
+  .day-tabs { display: flex; flex-wrap: wrap; gap: .4rem; margin: .8rem 0 1rem; }
+  .day-tabs button {
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: .45rem .85rem;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: .95rem;
+    cursor: pointer;
+  }
+  .day-tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .event {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .8rem 1rem;
+    margin-bottom: .6rem;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: .8rem;
+  }
+  .event .time { font-weight: bold; font-size: 1rem; color: var(--accent); }
+  .event .venue { font-size: .8rem; color: var(--muted); }
+  .event h3 { margin: 0 0 .2rem; font-size: 1.02rem; }
+  .event .authors { font-size: .85rem; color: var(--muted); margin: .15rem 0; }
+  .badge {
+    display: inline-block;
+    font-size: .72rem;
+    padding: .12rem .5rem;
+    border-radius: 999px;
+    margin-right: .35rem;
+    background: #efe6da;
+    color: var(--accent);
+    font-weight: bold;
+  }
+  .badge.logistica { background: #e2e2e2; color: #555; }
+  .badge.simposio { background: #dfe8f5; color: #2d4f8b; }
+  .badge.cartel { background: #e3f2e3; color: #2e6b34; }
+  .badge.magistral { background: #f5e3df; color: #8b3a2d; }
+  .session-name { font-size: .8rem; color: var(--muted); font-style: italic; margin-top: .15rem; }
+  .count { color: var(--muted); font-size: .9rem; margin: 0 0 .6rem; }
+  .empty { text-align: center; color: var(--muted); padding: 3rem 0; }
+  @media (max-width: 540px) {
+    .event { grid-template-columns: 1fr; gap: .2rem; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useMemo } = React;
+
+const BADGE_CLASS = {
+  "Logística": "logistica",
+  "Simposio": "simposio",
+  "Cartel": "cartel",
+  "Conferencia magistral": "magistral"
+};
+
+function App() {
+  const [events, setEvents] = useState([]);
+  const [error, setError] = useState(null);
+  const [day, setDay] = useState("Todos");
+  const [venue, setVenue] = useState("Todos");
+  const [type, setType] = useState("Todos");
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    if (typeof PROGRAM_DATA !== "undefined") { setEvents(PROGRAM_DATA); return; }
+    fetch("program.json")
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(setEvents)
+      .catch(() => setError("No se pudo cargar program.json"));
+  }, []);
+
+  const days = useMemo(() => [...new Set(events.map(e => e.day))], [events]);
+  const venues = useMemo(() => [...new Set(events.map(e => e.venue))].sort(), [events]);
+  const types = useMemo(() => [...new Set(events.map(e => e.type))].sort(), [events]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return events.filter(e =>
+      (day === "Todos" || e.day === day) &&
+      (venue === "Todos" || e.venue === venue) &&
+      (type === "Todos" || e.type === type) &&
+      (!q || e.title.toLowerCase().includes(q) ||
+             e.authors.toLowerCase().includes(q) ||
+             e.session.toLowerCase().includes(q))
+    );
+  }, [events, day, venue, type, query]);
+
+  const grouped = useMemo(() => {
+    const g = {};
+    for (const e of filtered) (g[e.day] ||= []).push(e);
+    return g;
+  }, [filtered]);
+
+  if (error) return <div className="container"><p className="empty">{error}</p></div>;
+
+  return (
+    <div>
+      <header>
+        <h1>XVII Congreso Nacional de Mastozoología</h1>
+        <p>19–23 de octubre de 2026</p>
+      </header>
+      <div className="container">
+        <div className="filters">
+          <input type="search" placeholder="Buscar por título, autor o sesión…"
+                 value={query} onChange={e => setQuery(e.target.value)} />
+          <select value={venue} onChange={e => setVenue(e.target.value)}>
+            <option>Todos</option>
+            {venues.map(v => <option key={v}>{v}</option>)}
+          </select>
+          <select value={type} onChange={e => setType(e.target.value)}>
+            <option>Todos</option>
+            {types.map(t => <option key={t}>{t}</option>)}
+          </select>
+        </div>
+        <div className="day-tabs">
+          <button className={day === "Todos" ? "active" : ""} onClick={() => setDay("Todos")}>Todos</button>
+          {days.map(d => (
+            <button key={d} className={day === d ? "active" : ""} onClick={() => setDay(d)}>{d}</button>
+          ))}
+        </div>
+        <p className="count">{filtered.length} evento{filtered.length === 1 ? "" : "s"}</p>
+        {filtered.length === 0 && <p className="empty">Sin resultados.</p>}
+        {Object.entries(grouped).map(([d, evts]) => (
+          <div key={d}>
+            <h2>{d} de octubre</h2>
+            {evts.map((e, i) => (
+              <div className="event" key={i}>
+                <div>
+                  <div className="time">{e.time}</div>
+                  <div className="venue">{e.venue}</div>
+                </div>
+                <div>
+                  <span className={"badge " + (BADGE_CLASS[e.type] || "")}>{e.type}</span>
+                  <h3>{e.title}</h3>
+                  {e.authors && <div className="authors">{e.authors}</div>}
+                  {e.type === "Simposio" && <div className="session-name">Simposio: {e.session}</div>}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

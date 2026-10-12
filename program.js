@@ -1,0 +1,3872 @@
+const PROGRAM_DATA = [
+  {
+    "day": "Lunes 19",
+    "time": "08:00",
+    "venue": "Pasillo principal",
+    "type": "Logística",
+    "session": "Registro",
+    "title": "Registro",
+    "authors": ""
+  },
+  {
+    "day": "Lunes 19",
+    "time": "09:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Inauguración",
+    "title": "Inauguración",
+    "authors": ""
+  },
+  {
+    "day": "Lunes 19",
+    "time": "09:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "ETAPAS EMERGENTES EN LA CONSERVACIÓN DEL LOBO MEXICANO",
+    "authors": "Dr. Jorge Servín Martínez"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "10:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Lunes 19",
+    "time": "10:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "AVANCES Y RETOS EN LA COEXISTENCIA EN MÉXICO EN EL MARCO DEL CAMBIO TRANSFORMADOR",
+    "authors": "Lizardo Cruz Romo, Khiavett Sánchez Pinzón, Daniel Jesús Espinoza, Víctor Duque Moreno, Pedro Bautista Ramírez y Fernando Contreras Moreno"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "10:45",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "LEISHMANIA Y CHAGAS EN LA PENÍNSULA DE YUCATÁN Y SU RELACIÓN CON EL TREN MAYA",
+    "authors": "Margarita García-Luis"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "10:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "EVALUACIÓN DE LOS VACÍOS DE CONOCIMIENTO ACERCA DE LOS RASGOS DE MURCIÉLAGOS A NIVEL GLOBAL",
+    "authors": "Roberto A. Ruiz-Ramírez, Luis D. Verde-Arregoitia, Nathan S. Upham y Fabricio Villalobos"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "10:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Avances en la investigación de los impactos de los parques eólicos en los murciélagos en México: logros, retos y perspectivas.",
+    "title": "DIAGNÓSTICO DEL IMPACTO DE LA INSTALACIÓN Y OPERACIÓN DE PARQUES EÓLICOS SOBRE LA QUIROPTEROFAUNA EN MÉXICO",
+    "authors": "Minerva A. Uribe Rivera, Juana Claudia Leyva-Aguilera, Mariana Villada-Canela, Carlos Francisco Peynador-Sánchez, Miguel Ángel Briones-Salas y Cris Hein"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "10:45",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "MÁS QUE UN NOMBRE: CÓMO LA TAXONOMÍA DE LOS VENADOS NEOTROPICALES IMPACTA SU CONSERVACIÓN Y EL ENTENDIMIENTO DE SU EVOLUCIÓN",
+    "authors": "Luis A. Escobedo Morales y y Pedro H. F. Peres"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "MÁS ALLÁ DE LA BIOLOGÍA: LA DIMENSIÓN HUMANA EN LA CONSERVACIÓN DE GRANDES DEPREDADORES",
+    "authors": "Juan L. Peña-Mondragón"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:00",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "SEROPREVALENCIA DE HANTAVIRUS EN COMUNIDADES DE ROEDORES Y MURCIÉLAGOS DE LA PENÍNSULA DE YUCATÁN",
+    "authors": "Nuria Juárez-Bazán, Laura Daniela Jaimes-Serrano, Audrey Arnal, Benjamin Roche, Rosa Elena Sarmiento-Silva, Ana Laura Vigueras-Galván y y Montserrat Elemi García-Hernández"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "RIQUEZA DE MAMÍFEROS DENTRO DE LA CANTERA ORIENTE, RESERVA ECOLÓGICA DEL PEDREGAL DE SAN ÁNGEL, CIUDAD DE MÉXICO",
+    "authors": "América García Orea, Yolanda Hortelano-Moncada, Miguel A. León-Tapia, Guillermo Gil-Alarcón y Matías Martínez Coronel"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Avances en la investigación de los impactos de los parques eólicos en los murciélagos en México: logros, retos y perspectivas.",
+    "title": "ESTRATIFICACIÓN VERTICAL DE MURCIÉLAGOS INSECTÍVOROS EN PARQUES EÓLICOS DE YUCATÁN, MÉXICO",
+    "authors": "M. Cristina MacSwiney G, Alem Ricardo Canto-Rodríguez y Julio César Canto- Martín"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:00",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "DIFERENCIACIÓN ECOLÓGICA ENTRE LAS SUBESPECIES DEL VENADO DE COLA BLANCA: UNA HIPÓTESIS INICIAL DE DIVERGENCIA IMPULSADA POR EL CLIMA",
+    "authors": "Luis A. Escobedo Morales y y Livia León Paniagua"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "COMPARTIENDO EL ESPACIO: RETOS Y OPORTUNIDADES DE LA COEXISTENCIA CON MAMÍFEROS SILVESTRES NOCTURNOS EN LA CIUDAD DE MÉXICO",
+    "authors": "Claudia Noemí Moreno Arzate, Fernando Paredes de los Ríos, Carmen Lizeth Tzintzun Sánchez, Paula Gabriela Espino Ortiz, Brenda Itzel Salazar Uribe, Stephani Rendis Ceja, Marisol Tiburcio Cortés, Ameyalli Marín Ventura, Liliana Rosas Durán, Sofía Guillén Rosas y Rodrigo A. Medellín Legorreta"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:15",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "HANTAVIRUS EN COMUNIDADES DE ROEDORES DE LA PENÍNSULA DE BAJA CALIFORNIA: PRIMERA EVIDENCIA SEROLÓGICA",
+    "authors": "Ana Laura Vigueras-Galván, Montserrat Elemi García-Hernández, Rosa Elena Sarmiento-Silva, Gustavo Arnaud y Ángel Rodríguez Moreno"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DIVERSIDAD DE MAMÍFEROS MEDIANOS Y GRANDES EN UNA ZONA PERIURBANA DE TUXPAN, VERACRUZ",
+    "authors": "Carlos Miranda-Wing, Juan Manuel Pech-Canché, Roberto Francisco Rubio-Jiménez Francisco Javier Sosa-Sánchez, Mayari Madai Tejeda-Sánchez, Julio Adrián Lima-Lima, Misael Antonio Díaz-Hernández y Blanca Esther Raya-Cruz"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Avances en la investigación de los impactos de los parques eólicos en los murciélagos en México: logros, retos y perspectivas.",
+    "title": "UNA PERSPECTIVA GENÉTICA AL ESTUDIO DE MURCIÉLAGOS EN REGIONES TROPICALES CON DESARROLLO EÓLICO",
+    "authors": "Izchel Vargas-Jiménez, Miguel Briones-Salas, Alejandro Flores-Manzanero y Yessica Rico"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:15",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "APORTES SOBRE ECOLOGÍA DEL TEMAZATE GRIS Y EL VENADO COLA BLANCA EN QUINTANA ROO",
+    "authors": "Alberto González-Gallina, Denise Spaan, Pedro E. Nahuat-Cervera, Sonia Gallina Tessaro y Mircea Hidalgo-Mihart"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "ESTRATEGIAS PARA LA COEXISTENCIA ENTRE MAMÍFEROS, AGRICULTORES Y GANADEROS EN LA SELVA MAYA, MÉXICO",
+    "authors": "Pedro Bautista-Ramírez, Fernando M. Contreras-Moreno, Daniel Jesús-Espinoza, José Mauricio Méndez-Tun, Sandra Petrone, Denise Vaillard Ahrens, Edwin Hernández-López, Ismael Cruz-Molina y Miryam Prado"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:30",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "DIVERSIDAD DE COXIELLAS EN MEXICO",
+    "authors": "Estefania Grostieta, Ingeborg Becker y Sokani Sánchez-Montes"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "PATRONES ESPACIO-TEMPORALES DE LA DIVERSIDAD Y ABUNDANCIA DE MAMÍFEROS EN TRES TIPOS DE VEGETACIÓN DE UN PAISAJE SEMIÁRIDO DEL SURESTE DE COAHUILA, MÉXICO",
+    "authors": "Erika J. Cruz-Bazan, Jorge E. Ramírez-Albores, Juan A. Encina-Domínguez y Eber G. Chavez-Lugo"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Avances en la investigación de los impactos de los parques eólicos en los murciélagos en México: logros, retos y perspectivas.",
+    "title": "MODELO DE INTERVENCIÓN PARA LA IMPLEMENTACIÓN DE ESTRATEGIAS DE CONSERVACIÓN EN MATERIA DE PARQUES EÓLICOS EN MÉXICO",
+    "authors": "Javier Enrique Sosa-Escalante, Miguel Briones-Salas y Andrés Cruces-Casellas"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:30",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "ABUNDANCIA Y ESTACIONALIDAD DE VENADOS EN LA SELVA MAYA",
+    "authors": "Fernando M. Contreras-Moreno, Sandra Petrone, José Mauricio Méndez Tun, Daniel Jesús-Espinosa, Khiavett G. Sánchez-Pinzón, Pedro Bautista-Ramírez, José Juan Flores-Martínez y Vladimir Rójas"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "PLAN INTEGRAL DE COEXISTENCIA PARA LA RECUPERACIÓN DEL LOBO MEXICANO EN DURANGO",
+    "authors": "Zaira Yaneth González Saucedo, Alejandro Gonzalez Bernal, John Winston Orta Lopez, Elías Márquez Martínez, Jorge Ignacio Servín Martínez y Enrique Martínez Meyer"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:45",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "LOS MYCOPLASMAS HEMOTRÓPICOS EN MAMÍFEROS MEXICANOS: UN RETO OLVIDADO",
+    "authors": "Gerardo Ballados-González, Sokani Sánchez-Montes, Anabel Cruz-Romero, Mariel Aguilar-Domínguez, Alejandra Chong-Guzman, Jannete Gamboa-Prieto y Manuel Martínez-Hernández"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "MASTOFAUNA DEL “BOSQUE UAKUSI”, CERRO DEL ÁGUILA, MORELIA, MICHOACÁN",
+    "authors": "Ruben Isaac Gomez-Gomez y María Concepción Apátiga Castelán"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Avances en la investigación de los impactos de los parques eólicos en los murciélagos en México: logros, retos y perspectivas.",
+    "title": "IMPACTO AMBIENTAL EN EL PARQUE EÓLICO SAN JACINTO, CHIAPAS, MÉXICO;  QUIRÓPTEROS INSECTÍVOROS",
+    "authors": "Mauricio Alejandro Espinosa Albores, Segundo Jordán Orantes Alborez, Arturo Carrillo Reyes y Ana Laura Gómez Cortés"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "11:45",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "MOVIMIENTOS DEL VENADO BURA EN RESPUESTA A LA VARIACIÓN DE LA PRODUCTIVIDAD VEGETAL EN UN AMBIENTE SEMIÁRIDO DE MÉXICO",
+    "authors": "Luz A. Pérez-Solano, Sonia Gallina-Tessaro, Luis García-Feria y Alexander Peña-Peniche"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "TENEMOS UN LARGO CAMINO HACIA LA COEXISTENCIA ENTRE EL SER HUMANO Y LAS NUTRIAS",
+    "authors": "Pablo C. Hernández-Romero, Elsa A. Rocha-Ortega y Ximena Luna-García"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:00",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "VIEJOS CONOCIDOS, NUEVAS AMENAZAS: PATÓGENOS EN LA INTERFAZ ENTRE FAUNA DOMÉSTICA Y SILVESTRE EN MÉXICO",
+    "authors": "Sokani Sánchez-Montes, Gerardo Ballados-González, Adair Caro-Macin, Martha Patricia Hernández-Rosas, Estefania Grostieta y Ingeborg Becker"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "LA RIQUEZA Y LA ESTRUCTURA FILOGENÉTICA RESPONDEN A PROCESOS DISTINTOS EN MURCIÉLAGOS FRUGÍVOROS NEOTROPICALES",
+    "authors": "Iván Hernández-Chávez y Livia León-Paniagua"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Avances en la investigación de los impactos de los parques eólicos en los murciélagos en México: logros, retos y perspectivas.",
+    "title": "MORTALIDAD DE MURCIÉLAGOS EN PARQUES EÓLICOS DE CHILE: 15 AÑOS DE MONITOREO Y LECCIONES DE EVALUACIÓN Y MITIGACIÓN",
+    "authors": "Francisco Santander, Jon Morant, y Juan Manuel Pérez-García SLR Consulting, Santiago, Chile. Proyecto Aves, Tendido Eléctrico, AvesChile, Santiago y Chile"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:00",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "ANÁLISIS DEL USO DEL HÁBITAT POR EL VENADO COLA BLANCA: FUNCIONES DE UTILIZACIÓN, GLMM Y MODELOS DE OCUPACIÓN",
+    "authors": "Salvador Mandujano"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "MI VECINO EL OSO: UN ENFOQUE TRANSDISCIPLINARIO DE LA COEXISTENCIA HUMANO-OSO NEGRO EN MONTERREY",
+    "authors": "Katya Lizeth Ortiz-Morales"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:15",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "SÍNDROME DE NARIZ BLANCA EN MÉXICO",
+    "authors": "Gabriela Elena Medina-Cruz, Carla Gabriela May-Mutul, Paola Nicté López-González, Lizbeth Josefina González-Herrera, Javier Enrique Sosa-Escalante, Angel Rodríguez-Moreno, Judith Castellanos-Moguel, Héctor David Martínez-Tamayo, Gabriel Gutiérrez-Granados, Víctor Sánchez-Cordero y Miguel Briones-Salas"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DISTRIBUCIÓN VERTICAL DE MAMÍFEROS ARBÓREOS EN LA RESERVA DE LA BIOSFERA EL TRIUNFO",
+    "authors": "Siria Samira Gámez-Jose, Germar González, Jorge Bolaños-Citalán, Consuelo Lorenzo-Monterrubio, Nyeema Harris, Liza Comita y Oswald Schmitz"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:15",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "HÁBITOS FORRAJEROS DE GRANDES UNGULADOS EN EL NORESTE DE MÉXICO. IMPLICACIONES PARA UN MANEJO SOSTENIBLE",
+    "authors": "Fernando Isaac Gastelum-Mendoza, César Martín Cantú-Ayala, Fernando Noel González-Saldívar, Eloy Alejandro Lozano-Cavazos y José Isidro Uvalle-Sauceda"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "FORTALECIENDO LA GOBERNANZA LOCAL PARA PROMOVER LA COEXISTENCIA CON EL JAGUAR EN LA SELVA LACANDONA",
+    "authors": "Paulina Arroyo-Gerala"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:30",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "ROEDORES ENDÉMICOS DE LA PENÍNSULA DE YUCATÁN Y SU PAPEL EN EL CICLO SILVESTRE DE Leishmania mexicana",
+    "authors": "Ángel Rodríguez-Moreno, Karen Lissette Cortinas-Arguelles, Miriam Berzunza-Cruz, Gabriel Gutiérrez-Granados, Ingeborg Becker, Víctor Sánchez-Cordero, Christopher R. Stephens, Constantino González-Salazar, Erika, I. Sosa-Bibiano, Isabel Cristina Cañeda-Guzmán y Eduardo A. Rebollar-Téllez"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "VARIACIÓN ESTACIONAL DE LA COMUNIDAD DE MAMÍFEROS EN UN SITIO CONSERVADO DE BAJA CALIFORNIA SUR",
+    "authors": "Cynthia Elizalde-Arellano, Víctor Hugo-Moreno Tirado, Paola Carlos Martínez, Laura Carreón Palau y Jorge del Ángel Rodríguez"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DINÁMICA POBLACIONAL MULTI-ANUAL DEL VAMPIRO COMÚN (Desmodus rotundus) EN UNA ZONA GANADERA DEL SUR DE MÉXICO",
+    "authors": "Rafael León-Madrazo, Sandra Milena Ospina-Garcés, Mircea Gabriel Hidalgo-Mihart, Alba Zulema Rodas-Martínez, Hibraim Adán Pérez-Mendoza y Rafael Ávila-Flores"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:30",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "CARACTERÍSTICAS CINEGÉTICAS Y CORRELACIONES AMBIENTALES DE LAS COSECHAS DEL BORREGO CIMARRÓN EN SONORA",
+    "authors": "José Abraham Sanchez-Vasquez y Carlos Hugo Alcalá-Galván"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "CONSTRUYENDO CAMINOS HACIA LA COEXISTENCIA CON PEQUEÑOS FELINOS EN MÉXICO",
+    "authors": "Mariam Weston Flores, Carlos Mauricio Delgado Martínez, Christian Oswaldo Aguirre-Solórzano y Belen Teni Mosso Medina"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:45",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "EVIDENCIA SEROLÓGICA DE EXPOSICIÓN A ORTHOHANTAVIRUS EN COMUNIDADES DE ROEDORES DE ALTA MONTAÑA EN LA FAJA VOLCÁNICA TRANSMEXICANA",
+    "authors": "Ana Laura Vigueras-Galván, Montserrat Elemi García-Hernández, Rosa Elena Sarmiento-Silva y Heliot Zarza Villanueva"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "EXPEDIENTES ABIERTOS DE BÚSQUEDA, LOCALIZACIÓN Y DESAPARICIÓN DE LA MASTOFAUNA EN SINALOA",
+    "authors": "Issac Camargo"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "¿DISPONIBILIDAD O PREFERENCIA? PATRONES MACROECOLÓGICOS DEL CONSUMO DE PLANTAS EN MURCIÉLAGOS FILOSTÓMIDOS",
+    "authors": "Diana M. Ochoa-Sanz, Danny Rojas y Fabricio Villalobos"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "12:45",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "CONSERVACIÓN Y MANEJO DE LOS ECOTIPOS DE VENADO BURA, BORREGO CIMARRÓN Y BERRENDO EN EL DESIERTO SONORENSE",
+    "authors": "Carlos Hugo Alcalá-Galván y Miguel Ángel Grageda García"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "13:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Adiós conflicto, hola coexistencia: un camino hacia la conservación de los mamíferos silvestres mexicanos.",
+    "title": "CARACTERÍSTICAS DEL PAISAJE ASOCIADAS A LA DEPREDACIÓN DE GANADO POR PUMA (Puma concolor) EN JALISCO: IMPLICACIONES PARA PROMOVER LA COEXISTENCIA",
+    "authors": "Rubén Carlos Mancilla Gómez, Luis Ignacio Íñiguez Dávalos, Jorge Servín Martínez, Juan Pablo Esparza-Carlos y Arturo Moreno Hernández"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "13:00",
+    "venue": "Auditorio Central",
+    "type": "Simposio",
+    "session": "Enfermedades en fauna silvestre y zoonosis: implicaciones ecológicas, sanitarias y de conservación en México.",
+    "title": "AVANCES EN LA DETECCIÓN MOLECULAR DE ARBOVIRUS EN MAMÍFEROS DE OAXACA, MÉXICO",
+    "authors": "Itandehui Hernández-Aguilar, Antonio Santos-Moreno y Luis Román Ramírez-Palacios"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "13:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "UN ANÁLISIS DE LOS INVENTARIOS MASTOFAUNÍSTICOS EN MÉXICO: VARIACIÓN TEMPORAL Y METODOLÓGICA",
+    "authors": "Cristóbal Torres-Velasco, Rubén Rosas-Zaragoza, Iván Hernández-Chávez y Giovani Hernández-Canchola"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "13:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "INFLUENCIA DE FACTORES LOCALES Y DEL PAISAJE EN LA VISITA DE MURCIÉLAGOS FRÚGIVOROS A Cecropia peltata EN UNA CIUDAD TROPICAL",
+    "authors": "Lucio Pérez-Pérez, M. Cristina MacSwiney G., Rafael Ávila-Flores, Beatriz Bolívar-Cimé y Romeo Alberto Saldaña Vázquez"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "13:00",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Simposio",
+    "session": "Retos para los ungulados neárticos y neotropicales en un mundo cambiante",
+    "title": "EL PAPEL DE LAS ANP EN LA CONSERVACIÓN DE UNGULADOS: RESERVA DE LA BIOSFERA MAPIMÍ",
+    "authors": "Eva López-Tello Mera, Jorge Ramos Luna, Adriana Sandoval Comte y Sonia Gallina-Tessaro"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "13:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "ACTUALIZACIÓN DE LA MASTOFAUNA MEXICANA: PATRONES DE DIVERSIDAD GEOGRÁFICA Y CATEGORÍAS DE RIESGO",
+    "authors": "Erick García-Trujano, Livia León-Paniagua, Luis Medrano-González y Giovani Hernández-Canchola"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "13:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DINÁMICA POBLACIONAL Y CICLO REPRODUCTIVO DE Leptonycteris nivalis EN DOS REFUGIOS CAVERNÍCOLAS DE TEPOZTLÁN MORELOS",
+    "authors": "Daniela Michel Carreño-Ochoa, Luis Gerardo Ávila-Torresagatón, Ana Cecilia Ibarra-Macías y José Antonio Guerrero Enriquez"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "13:30",
+    "venue": "",
+    "type": "Logística",
+    "session": "Comida",
+    "title": "Comida",
+    "authors": ""
+  },
+  {
+    "day": "Lunes 19",
+    "time": "15:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Conferencias magistrales",
+    "title": "GANADORES DE TESIS 2024-2026",
+    "authors": ""
+  },
+  {
+    "day": "Lunes 19",
+    "time": "15:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "EFECTO DE LA INCERTIDUMBRE DE LOS DATOS DE PRESENCIA EN LA ESTIMACIÓN DEL NICHO ECOLÓGICO Y LA DISTRIBUCIÓN",
+    "authors": "Carlos Villagran Marín"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "15:55",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "ECOLOGÍA TRÓFICA EN LA COMUNIDAD DE CARNÍVOROS MEDIANOS Y GRANDES DEL NOROESTE DE CHIHUAHUA, MÉXICO",
+    "authors": "Jorge Luis Reyes Díaz"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "16:20",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "HISTORIA EVOLUTIVA DE LOS TEMAZATES MESOAMERICANOS Mazama pandora y M. temama (CETARTIODACTYLA: CERVIDAE) A PARTIR DE DATOS MOLECULARES, MORFOLÓGICOS Y ECOLÓGICOS",
+    "authors": "Luis Arturo Escobedo Morales"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "16:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "ESTRATEGIAS INTERDISCIPLINARIAS PARA LA CONSERVACIÓN A LARGO PLAZO DE PUMAS Y JAGUARES EN MÉXICO: IMPLICACIONES EN EL ANTROPOCENO",
+    "authors": "Dr. Octavio César Rosas Rosas"
+  },
+  {
+    "day": "Lunes 19",
+    "time": "17:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Evento cultural",
+    "title": "Evento cultural",
+    "authors": ""
+  },
+  {
+    "day": "Martes 20",
+    "time": "08:00",
+    "venue": "Pasillo principal/Patio de aulas",
+    "type": "Logística",
+    "session": "Registro",
+    "title": "Registro",
+    "authors": ""
+  },
+  {
+    "day": "Martes 20",
+    "time": "09:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "CONSERVAR MAMÍFEROS EN EL ANTROPOCENO: CIENCIA, INCERTIDUMBRE Y ESPERANZA",
+    "authors": "Dra. Emma Gómez Ruiz"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "REIMAGINANDO LA CONSERVACIÓN DE CARNÍVOROS DESDE UNA PERSPECTIVA SOCIOECOLÓGICA",
+    "authors": "Juan Luis Peña-Mondragón"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "PROCESO DE SUCESIÓN Y USO DE CARROÑA POR ANIMALES VERTEBRADOS EN UN AMBIENTE DESÉRTICO AL NORTE DE CHIHUAHUA",
+    "authors": "Sofía Jaqueline Vásquez-Ibarra, Jesús Manuel Martínez-Calderas y Ana Bertha Gatica-Colima"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Bibliometría",
+    "title": "ANÁLISIS BIBLIOGRÁFICO DE LOS MAMÍFEROS DE MÉXICO EN LOS ÚLTIMOS 125 AÑOS",
+    "authors": "Juan Manuel Pech Canché, Nayeli Monserrat Figueroa Súarez y Javier Enrique Sosa Escalante"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "MARCO LEGISLATIVO Y PROCEDIMIENTOS PARA LA GESTIÓN Y CONSERVACIÓN DE COLECCIONES CIENTÍFICAS DE MAMÍFEROS TERRESTRES EN MÉXICO",
+    "authors": "Rodrigo Pilar Ruiz y Giovani Hernández Canchola"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:15",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Ponencia",
+    "session": "Mesa de trabajo",
+    "title": "MESA DE TRABAJO DEL SIMPOSIO \"AVANCES EN LA INVESTIGACIÓN DE LOS IMPACTOS DE LOS PARQUES EÓLICOS EN LOS MURCIÉLAGOS EN MÉXICO: LOGROS, RETOS Y PERSPECTIVAS”",
+    "authors": "Minerva Ángela Uribe Rivera y Mariana Villada Canela"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "PLANTEAMIENTO MULTITEMPORAL DE LOS CONFLICTOS Y LA COEXISTENCIA ENTRE CARNÍVOROS Y HUMANOS",
+    "authors": "Alberto Lafón-Terrazas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "ABUNDANCIA RELATIVA DE Odocoileus virginianus EN UNA CIUDAD TROPICAL: LA URBANIZACIÓN Y LOS PERROS FERALES EN MÉRIDA, YUCATÁN, MÉXICO",
+    "authors": "Andrés Cruces-Casellas, Mircea G. Hidalgo-Mihart y Javier Enrique Sosa-Escalante"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "IDENTIFICACIÓN DE ÁREAS PRIORITARIAS PARA LA CONSERVACIÓN DE MAMÍFEROS EN LAS ALCALDÍAS DE COYOACÁN Y TLALPAN, CIUDAD DE MÉXICO",
+    "authors": "Ximena Luna-García, Pablo César Hernández-Romero, Juan José Von Thaden, David A. Prieto-Torres y Tania Garrido-Garduño"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "LA DIGITALIZACIÓN DE COLECCIONES MASTOZOOLÓGICAS COMO MOTOR PARA LA INVESTIGACIÓN INTEGRATIVA",
+    "authors": "Sandra Milena Ospina-Garcés"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "DIMENSIONES HUMANAS DEL MANEJO DE FAUNA SILVESTRE Y LA COEXISTENCIA HUMANOS-GRANDES CARNÍVOROS EN MÉXICO",
+    "authors": "Alejandra Olivera Méndez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "INTEGRIDAD ECOSISTÉMICA Y ESTRUCTURA DE LA COMUNIDAD DE MAMÍFEROS MEDIANOS Y GRANDES EN BOSQUES SUBTROPICALES DE LA SIERRA DE MANANTLÁN",
+    "authors": "Juan Pablo Esparza-Carlos, María Magdalena Ramírez Martínez, Jorge Amador González Pelayo, Oscar Rangel Aguilar, Adolfo Hernández Rodríguez, José Guadalupe Olivares Valle, María Guadalupe Rubio Castañeda y Eugenio Ramírez Anaya"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "COLISIONES DE MAMÍFEROS EN UN TRAMO CARRETERO DE CATAZAJA, CHIAPAS, MÉXICO",
+    "authors": "Juan de Dios Valdez-Leal, Coral Jazvel Pacheco-Figueroa, Ramiro Aquiles Hernández-Velázquez, Ángel Francisco Reich-Velázquez, Ruth del Carmen Luna-Ruíz, Mircea Gabriel Hidalgo-Mihart, Eduardo Javier Moguel-Ordoñez, Ena Edith Mata Zayas, Lilia María Gama-Campillo y Joel Saénz"
+  },
+  {
+    "day": "Martes 20",
+    "time": "10:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "LA INTELIGENCIA ARTIFICIAL COMO HERRAMIENTA DE APOYO EN ESTUDIOS HISTÓRICOS EN COLECCIONES MASTOZOOLÓGICAS",
+    "authors": "Lázaro Guevara, F. Alejandro González de la Colina y Julieta Vargas Cuenca"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "JAGUARES Y PUMAS, ADAPTÁNDOSE A LOS NUEVOS PAISAJES ANTROPICOS: EL CASO DEL OCCIDENTE DE MEXICO",
+    "authors": "Rodrigo Núñez Pérez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "ESTIMACIÓN POBLACIONAL DEL CRÍTICAMENTE AMENAZADO MAPACHE PIGMEO (Procyon pygmaeus)",
+    "authors": "Sofía A. L. Lara-Godínez, David Valenzuela Galván, Alfredo D. Cuarón y Alberto González-Romero"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "ANÁLISIS DE LA CONECTIVIDAD DEL HÁBITAT PARA EL TIGRILLO (Leopardus wiedii) EN EL ESTADO DE MORELOS",
+    "authors": "Jesús Aparicio Pérez, Juan Manuel Uriostegui Velarde, José Antonio Guerrero y Mircea Hidalgo Mihart"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "HERRAMIENTAS DE CÓDIGO ABIERTO PARA CONECTAR LAS COLECCIONES MASTOZOOLÓGICAS Y SUS DATOS CON LA MACROECOLOGÍA",
+    "authors": "Luis D. Verde Arregoitia"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "ENCUENTROS ENTRE HUMANOS-FELINOS: COEXISTENCIA Y PREVENCIÓN DE RIESGOS EN ZONAS CONSERVADAS CON PRESENCIA PERMANENTE DE PUMAS Y JAGUARES",
+    "authors": "Juan Pablo Esparza-Carlos y María Davidnia García Rojas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "ESPECIES VEGETALES CONSUMIDAS POR MURCIÉLAGOS",
+    "authors": "Jorge A. Vargas-Contreras, Griselda Escalona-Segura, Efraín Aguirre-Cortés, Rodrigo A. Medellín, Francisco J. Aguirre-Crespo, Sol de M. Mejenes-López, José L. Aragón-Gastelum, Alexis H. Plascencia-Vazquez y Geucilio G. Cabrera-Mis"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "IMPLEMENTACIÓN DE CÁMARAS TRAMPA PARA MONITOREAR ACTIVIDAD DE UN MURCIÉLAGO EN PELIGRO DE EXTINCIÓN",
+    "authors": "Victor Omar Medrano-Rodríguez, Emma Patricia Gómez-Ruiz y Luz A. Pérez-Solano"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "MUSEÓMICA: LAS COLECCIONES CIENTÍFICAS EN LA ERA GENÓMICA",
+    "authors": "Susette Castañeda-Rico"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "NARRATIVAS DIGITALES Y COEXISTENCIA: EFECTO DEL ENCUADRE DE VIDEOS SOBRE LAS RESPUESTAS HACIA GRANDES FELINOS",
+    "authors": "Anuar Hernández Saint Martin"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DIVERSIDAD DE MAMÍFEROS MEDIANOS Y GRANDES EN CUATRO SITIOS DE BOSQUE TROPICAL CON DIFERENTE COBERTURA VEGETAL EN QUINTANA ROO, MÉXICO",
+    "authors": "X. Kahori Ramírez Soriano, Carlos A. López González, Álvaro José Villafañe Trujillo y Nalleli E. Lara Díaz"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "EFECTO DE LA PERTURBACIÓN DEL PAISAJE EN LOS PATRONES DE COOCURRENCIA ESPACIOTEMPORALES DE MAMÍFEROS MEDIANOS Y GRANDES EN CHINANTLA, OAXACA",
+    "authors": "Mario C. Lavariega, R. Elena Galindo-Aguilar, Beatriz Carely Luna-Olivera, Marcelino Ramírez-Ibáñez, Érika García-Casimiro, Eduardo Sánchez Soto, José Rogelio Prisciliano, Jaime M. Calderón-Patrón, Camelia E. Gómez-Herrera, Adriana Avendaño, Cristina Ruiz Canseco y Natalia Martin-Regalado"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "LAS COLECCIONES MASTOZOOLÓGICAS COMO ARCHIVOS PARA EVALUAR LA VULNERABILIDAD DE LOS CARNÍVOROS ANTE EL CAMBIO CLIMÁTICO",
+    "authors": "Carlos Luna-Aranguré"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "USO ESPACIAL E INTERACCIÓN CON AMBIENTES ANTROPIZADOS DEL OSO NEGRO AMERICANO (Ursus americanus) EN EL PARQUE NACIONAL CUMBRES DE MONTERREY",
+    "authors": "Gustavo Navarrete-Alonso, Guillermo Herrera-Pérez, José I. González-Rojas, Ricardo Torres-Cardenas y Gabriel Ruiz-Aymá"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "PATRONES DE ACTIVIDAD Y DINÁMICAS ESPACIOTEMPORALES DE MAMÍFEROS ARBORÍCOLAS EN LOS TUXTLAS, VERACRUZ",
+    "authors": "J. Vladimir Rojas-Sánchez, Rosamond Ione Coates, Marcelino Ramírez-Ibañez, Mario C. Lavariega, Beatriz Carely Luna-Olivera, Víctor Sánchez-Cordero y José Juan Flores-Martínez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "LA COMUNIDAD DE MAMÍFEROS EN UN ÁREA PROTEGIDA DEL SUR DE YUCATÁN: EFECTOS DE LA PROTECCIÓN ACTIVA DEL HÁBITAT",
+    "authors": "César R. Rodríguez-Luna, Eduardo E. Palomo-Arjona, Rahuel J. Chan-Chablé, Ricardo M. Pasos-Enriquez, James M. Callaghan y Carlos N. Ibarra-Cerdeña"
+  },
+  {
+    "day": "Martes 20",
+    "time": "11:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "MUTUALISMO CIENTÍFICO: COLECCIONES BIOLÓGICAS Y ESTUDIOS ECOEPIDEMIOLÓGICOS DE ENFERMEDADES ZOONÓTICAS",
+    "authors": "Ian Ayala-Montoya, Ricardo Medina-Juárez, Daniel Rodríguez-Martínez, Daniela Hermosilla-Díaz y y Pablo Colunga-Salas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "CONFLICTOS ENTRE ACTIVIDADES HUMANAS Y EL OSO NEGRO (Ursus americanus) EN MÉXICO:  LECCIONES DEL CASO DEL OSO 34",
+    "authors": "Rogelio Carrera-Treviño"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "BIOLOGÍA ALIMENTARIA DEL VENADO COLA BLANCA VERACRUZANO (Odocoileus virginianus veraecrucis) EN LA HUASTECA",
+    "authors": "Carlos A. Contreras-Verteramo, Sonia Gallina, José Antonio Rangel-Lucio, Brenda Alvarado-Sánchez y Christian A. Delfín Alfonso"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "MÁS ALLÁ DE LA REHABILITACIÓN: HACIA CRITERIOS PARA LA REUBICACIÓN DE CRÍAS DE Didelphis virginiana EN UNA ZONA DE SIMPATRÍA",
+    "authors": "Alba Z. Rodas-Martínez, Luis Ramos-Tavera y Rafael Ávila-Flores"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "CONTAMINANTES EMERGENTES EN LATINOAMÉRICA. ¿QUÉ NOS DICEN LAS COLECCIONES MASTOZOOLÓGICAS?",
+    "authors": "Leticia Anaid Mora-Villa, Rocío García-Martínez, Daniela de Melo, Silva y Livia León-Paniagua"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "ENCUENTROS CERCANOS ENTRE GRANDES FELINOS Y HUMANOS EN MÉXICO",
+    "authors": "Octavio César Rosas Rosas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DETECCIÓN ESPACIAL Y TEMPORAL DE CARNÍVOROS Y PRESAS DE LA MONTAÑA CHIPINQUE, NUEVO LEÓN, MÉXICO",
+    "authors": "Jonh Esqueda, Andrés Gerardo Avila-Mata y Emma Patricia Gómez-Ruíz"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "MODELO DE MANEJO DEL BORREGO CIMARRÓN PARA BAJA CALIFORNIA, MÉXICO",
+    "authors": "Enrique de Jesús Ruiz-Mondragón, Guillermo Romero-Figueroa, Crystian-Sadiel Venegas Barrera, María Evarista Arellano-García, Israel Guerrero-Cárdenas y Eloy Alejandro Lozano-Cavazos"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "GÉNERO Y COLECCIONES MASTOZOOLÓGICAS EN MÉXICO",
+    "authors": "Alexa Yazmin Resendiz Jarquin, Livia León Paniagua, Rodrigo Pilar Ruiz y Giovani Hernández Canchola"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Prevención y mitigación de encuentros entre humanos y grandes carnívoros en México: evidencia y estrategias para la coexistencia",
+    "title": "COMENTARIOS FINALES",
+    "authors": "Octavio César Rosas Rosas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "COEXISTENCIA DE LA ZORRA GRIS Y SUS DEPREDADORES INTRAGREMIALES EN LA RESERVA DE LA BIOSFERA TEHUACÁN-CUICATLÁN",
+    "authors": "Jonathan Martínez Hernández y Verónica Farías González"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "MAMÍFEROS EN FRAGMENTOS DE BOSQUE TROPICAL EN VERACRUZ: RIQUEZA Y OCUPACIÓN",
+    "authors": "Mónica R. González-Acosta, Nalleli E. Lára-Díaz, Christian A. Delfín-Alfonso, Carlos A. López-González y Luis G. Abarca-Arenas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Simposio",
+    "session": "Colecciones mastozoológicas en el siglo XXI: del repositorio a la innovación científica",
+    "title": "MESA DE DISCUSIÓN",
+    "authors": "Giovani Hernández Canchola, Livia León Paniagua y Lázaro Guevara"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Incidencia de políticas públicas en la conservación de los mamíferos",
+    "title": "EFECTIVIDAD DE LAS ÁREAS PROTEGIDAS PARA CONSERVAR LA DIVERSIDAD DE ROEDORES EN LA SIERRA MADRE ORIENTAL BAJO EL CAMBIO CLIMÁTICO",
+    "authors": "Diana López-Higareda, Susette Castañeda-Rico, Elisa Paulina Zaragoza-Quintana y Zamira A. Ávila-Valle"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "MONITOREO Y CONSERVACIÓN DEL JAGUAR EN LA SIERRA OCCIDENTAL DE JALISCO",
+    "authors": "Carlos Eduardo Illescas-Malagón, Christian Oswaldo Aguirre-Solórzano, Lizardo Cruz-Romo y Sandra Petrone-Mendoza"
+  },
+  {
+    "day": "Martes 20",
+    "time": "12:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "CAFETALES COMO FUENTE POTENCIAL DE MAMÍFEROS PARA EL TRÁFICO ILEGAL DE FAUNA SILVESTRE EN PUEBLA",
+    "authors": "Osvaldo Eric Ramírez Bravo, Daniel Jiménez García, Héctor Bernal Mendoza, Dionicio Juárez Ramón, Primo Sánchez Morales, Jesús F. López Olguín y Agustín Aragón García"
+  },
+  {
+    "day": "Martes 20",
+    "time": "13:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Incidencia de políticas públicas en la conservación de los mamíferos",
+    "title": "IMPACTO DE LA LITERATURA MASTOZOOLÓGICA EN LA TOMA DE DECISIONES PARA EL ESTABLECIMIENTO DE ÁREAS NATURALES PROTEGIDAS EN MÉXICO",
+    "authors": "César Hernández Hernández"
+  },
+  {
+    "day": "Martes 20",
+    "time": "13:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "TENDENCIAS EN LA FECUNDIDAD DEL LOBO MARINO DE CALIFORNIA",
+    "authors": "César Iván Miguel-Ventura, Lili Pelayo-González y Claudia J. Hernández-Camacho"
+  },
+  {
+    "day": "Martes 20",
+    "time": "13:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "PRESENCIA DE ELEMENTOS POTENCIALMENTE TÓXICOS EN MURCIÉLAGOS QUE RESIDEN CERCA DE UNA CENTRAL ELÉCTRICA EN GUERRERO, MÉXICO",
+    "authors": "Ever Ávila-Zúñiga, Victor Rosas-Guerrero, Anaid Mora-Villa, Rocío García-Martínez y Sergio Salgado-Souto"
+  },
+  {
+    "day": "Martes 20",
+    "time": "13:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "PATRONES DE ACTIVIDAD Y VARIACIÓN ESTACIONAL DE FELINOS Y PRESAS POTENCIALES EN EL ÁREA DE CONSERVACIÓN “EL ZAPOTAL”, YUCATÁN",
+    "authors": "Víctor Castelazo Calva y Anuar Hernández Saint Martin"
+  },
+  {
+    "day": "Martes 20",
+    "time": "13:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "DIVERSIDAD Y ABUNDANCIA ESPACIO-TEMPORAL DE MAMÍFEROS TERRESTRES EN PAISAJES CON DIFERENTE GRADO DE CONSERVACIÓN EN LA SELVA MAYA, MÉXICO",
+    "authors": "Khiavett Sánchez-Pinzón, Fernando M. Contreras-Moreno, Daniel Jesús-Espinosa, José M. Méndez-Tun, Pedro Bautista-Ramírez, Sandra Petrone, Héctor M. J. López-Castilla, Víctor Sánchez-Cordero, Vladimir Rojas-Sánchez y José Juan Flores-Martínez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "13:30",
+    "venue": "",
+    "type": "Logística",
+    "session": "Comida",
+    "title": "Comida",
+    "authors": ""
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "SESIÓN DE CARTELES I",
+    "title": "SESIÓN DE CARTELES I",
+    "authors": ""
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A1-DIVERSIDAD TAXONÓMICA Y VARIACIÓN ESPACIO–TEMPORAL DE MAMÍFEROS MEDIANOS Y GRANDES EN SIERRA DE TESISTÁN, ZAPOPAN, JALISCO, MÉXICO",
+    "authors": "Ana Isabel González-Pérez, José María Hernández-Sánches, Ana Luisa Santiago-Pérez y Verónica Carolina Rosas-Espinoza"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A2-ESTADO DE LA POBLACIÓN DEL VENADO BURA DEL OESTE DE SONORA, MÉXICO",
+    "authors": "Juan Manuel Segundo-Galán, Enrique de Jesús Ruiz-Mondragón, Raul Valdez e Israel Guerrero-Cárdenas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A3-RIQUEZA, DIVERSIDAD Y TAMAÑO DE COLONIA DE MURCIÉLAGOS DE LA CUEVA BARTOLO, NUEVO LEÓN, Y SU RELACIÓN CON CONDICIONES ECOLÓGICAS",
+    "authors": "Irene Alexandra López-Herrera, A. Nayelli Rivera-Villanueva, Antonio Guzmán-Velasco y Francisco Miguel Puente-Guevara"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A4-DIFERENCIACIÓN MORFOLÓGICA DEL COMPLEJO DE ESPECIES Nyctomys sumichrasti (RODENTIA: CRICETIDAE)",
+    "authors": "Yuleni Constantino-Demesa, Daryl D. Cruz, Francisco X. González-Cózatl y Giovani Hernández-Canchola"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A5-MORFOMETRÍA TRADICIONAL PARA ILUSTRACIONES CIENTÍFICAS DE MURCIÉLAGOS (ORDEN CHIROPTERA) DEL NOROESTE DE MÉXICO",
+    "authors": "Alejandra García-Treviño, Guillermo Martínez-Rodríguez, Lenin Sánchez-Calderón y Melina del Real-Monroy"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A6-USO DE BEBEDEROS ARTIFICIALES POR PARTE DE MAMÍFEROS EN APAZAPAN VERACRUZ",
+    "authors": "Pedro Ramón Sosa Domínguez, Gerardo Aburto Vásquez, Santiago Montes de Oca Villegas, Ana Delfín-Peralta y Christian Alejandro-Delfín Alfonso"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A7-IDENTIFICACIÓN DE PIELES DE PROCEDENCIA ILEGAL",
+    "authors": "Alondra Pérez-Robelo y Yolanda Hortelano-Moncada"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A8-REVISIÓN BIBLIOGRÁFICA DE LA RIQUEZA DE MURCIÉLAGOS EN EL PARQUE NACIONAL CASCADA DE BASASEACHI, OCAMPO, CHIHUAHUA",
+    "authors": "Paloma Yereni Pérez-Valenzuela, Ana Gatica-Colima y Jesús Manuel Martínez-Calderas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A9-CONOCIMIENTO ECOLÓGICO TRADICIONAL DEL VENADO COLA BLANCA (Odocoileus virginianus) EN SAN ANDRÉS DE LA CAL, TEPOZTLÁN, MORELOS, MÉXICO",
+    "authors": "Carlos Adrián Beltran Colin, Juan Manuel Uriostegui Velarde, Hortensia Colin Bahena, José Antonio Guerrero y Alejandro García Flores"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A10-DIVERSIDAD DE TRES ENSAMBLES DE MURCIÉLAGOS DEL MUNICIPIO DE SAN PEDRO QUIATONI, OAXACA, MÉXICO",
+    "authors": "Elba López-Miguel y Antonio Santos-Moreno"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A11-MODELACIÓN DE ÁREAS FAVORABLES PARA LA CONSERVACIÓN DEL OCELOTE ANTE FACTORES DE RIESGO ANTROPOGÉNICO",
+    "authors": "Aline Daniela Escamilla-Betanzos y Carlos Alejandro Luna-Aranguré"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A12-DIVERSIDAD DE MURCIÉLAGOS EN UN REMANENTE DE VEGETACIÓN NATURAL EN TUXPAN, VERACRUZ",
+    "authors": "Juan Felipe Francisco-Hernández, Carlos Miranda-Wing, Juan Manuel Pech-Canché, Daniel Sokani Sánchez-Montes, Flor Guadalupe Vite-Romero, Aldo Jonathan Ortíz-Guzmán y José Luis Reyes-Montiel"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A13-INTERACCIONES ENTRE COMUNIDADES HUMANAS Y EL OSO NEGRO (Ursus americanus eremicus) EN EL SUR DE NUEVO LEÓN, MÉXICO",
+    "authors": "Carlos Fabian Terrazas Tzontecomani y Juan Luis Peña-Mondragón"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A14-DIVERSIDAD DE MAMÍFEROS EN LA SIERRA NORORIENTAL, CHIGNAUTLA, PUEBLA",
+    "authors": "Ana Patricia Aparicio-Lucas, Guadalupe Joselyn Claudio-Martínez, Juan Manuel Pech-Cánche, Cesar Arcos-Ramírez, Manuel Anacleto-Vicente, Agripino Julián Carlos y Oscar Ramírez-Cruz"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A15-COMPOSICIÓN, ESTRUCTURA Y FUNCIÓN DE LA COMUNIDAD DE QUIRÓPTEROS EN DIFERENTES SISTEMAS AGROFORESTALES EN ATLAPEXCO, HIDALGO",
+    "authors": "Regina Campos Gil, Malinalli Cortés Marcial y Jesús Sánchez Robles"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A16-REPRESENTATIVIDAD TAXONÓMICA Y GEOGRÁFICA DE LOS MAMÍFEROS DE LA COLECCIÓN MASTOZOOLÓGICA DEL CIIDIR, OAXACA",
+    "authors": "Eduardo Franco-Puga, Jocabed Ramírez-Cruz, Miguel Briones-Salas y Graciela E. González Pérez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A17-DEPREDACIÓN DE FAUNA SILVESTRE POR EL GATO DOMÉSTICO (Felis silvestris catus) EN CIUDAD JUÁREZ, CHIHUAHUA",
+    "authors": "Monserrat Ruiz Aguirre, Jesús Manuel Martínez-Calderas y Carmen Alejandra Méndez Hurtado"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A18-REGISTRO DE DOS NUEVAS PRESAS POTENCIALES DEL JAGUAR EN EL NORESTE DE YUCATÁN",
+    "authors": "Anuar Hernández Saint Martín, V. Castelazo Calva y Manuel Reyes Sánchez Ruiz"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A19-PATRONES MORFOMÉTRICOS DEL RATÓN DE PATAS BLANCAS EN EL MATORRAL ESPINOSO TAMAULIPECO",
+    "authors": "lisa Paulina Zaragoza-Quintana, Mauricio Cotera-Correa, Cristian Adrian Martínez-Adriano y Andrés Eduardo Estrada-Castillón"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A20-LA DELIMITACIÓN MOLECULAR DE ESPECIES RESPALDA LA DIVERSIDAD TAXONÓMICA DEL COMPLEJO Peromyscus maniculatus",
+    "authors": "Carlos Sebastián Martínez-Canul, Erick García-Trujano, M. Ángel León-Tapia y Giovani Hernandez-Canchola"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A21-NUEVOS REGISTROS ALTITUDINALES Y RELACIÓN DE MAMÍFEROS TERRESTRES DE ALTAS ALTITUDES EN MÉXICO",
+    "authors": "Jocelyn Salvador-Lara, David Mercado-Morales y Evelyn Rios"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A22-RIQUEZA Y PATRONES DE ACTIVIDAD DE LOS MAMÍFEROS MEDIANOS Y GRANDES DEL MUNICIPIO DE SANTO DOMINGO ALBARRADAS, OAXACA",
+    "authors": "Samuel Alejandro Sánchez Martínez, Jesús Martínez-Vázquez, Rosa María González-Monroy y Nayeli Martínez-González"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A23-PULGAS EN MAMÍFEROS SILVESTRES DE SAN JOSECITO Y SUS ALREDEDORES, NUEVO LEÓN, MÉXICO",
+    "authors": "Roxana Acosta Gutiérrez y Margarita Vargas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A24-ACTIVIDAD DE LA ZORRA GRIS EN DOS HÁBITATS EN NUEVO LEÓN, MÉXICO",
+    "authors": "Hugo Alejandro Cuellar-Soto, David Mercado-Morales y Evelyn Rios"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A25-COMPORTAMIENTO SOCIAL DEL LOBO MEXICANO (Canis lupus baileyi) EN LA UMA “SANTUARIO EXTINCIÓN CERO”, COATEPEC DE HARINAS, ESTADO DE MÉXICO",
+    "authors": "Azul Reneé Chande-Jauregui, Nalleli E. Lara-Díaz, María de la Asunción Soto-Alvarez y Herbe Monroy-Jacobo"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A26-DIMORFISMO SEXUAL DEL VAMPIRO COMÚN (Desmodus rotundus) EN EL NORTE DE VERACRUZ",
+    "authors": "Tomás Eduardo Delgado-Ramírez, Rigoberto Gutiérrez-Molina, Carlos Miranda-Wing y Juan Manuel Pech-Canché"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A27-LUCES Y SOMBRAS EN EL EJE NEOVOLCÁNICO: MASTOFAUNA AMENAZADA Y NUEVAS FRONTERAS DE MUESTREO",
+    "authors": "Iván Mora Escamilla, José F. González Maya, Heliot Zarza Villanueva y Rurik Hermman List"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A28-Philander opossum COMO PRESA DE Didelphis marsupialis EN LOS TUXTLAS, VERACRUZ",
+    "authors": "J. Vladimir Rojas-Sánchez, Víctor Sánchez-Cordero, Rosamond Coates, Mauricio Hernández-Jauregui y José Juan Flores-Martínez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A29-PEQUEÑOS RECINTOS, GRANDES DATOS. EL PAPEL DE LAS COLECCIONES CIENTÍFICAS REGIONALES EN EL ESTUDIO DE LAS MUSARAÑAS DEL GÉNERO Sorex",
+    "authors": "Stephanye Mata-González, Tania Escalante, Lázaro Guevara y Elizabeth Arellano"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A30-REFUGIOS ARTIFICIALES PARA MURCIÉLAGOS: RESULTADOS PRELIMINARES, LECCIONES Y PERSPECTIVAS",
+    "authors": "Danna Gómez-Montemayor, Aquetzalli Nayelli Rivera-Villanueva y Antonio Guzmán-Velasco"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A31-LISTADO TAXONÓMICO DE LOS MURCIÉLAGOS DE NUEVO HUIXTÁN, CHIAPAS, MÉXICO",
+    "authors": "Abril Dessire Murillo-Graciano, Rodrigo García-Morales, Miguel Jácome-Flores y Enrique Martínez-Meyer"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A32-HISTORIA DEMOGRÁFICA Y DIVERSIDAD GENÉTICA DE Leptonycteris curasoae EN LAS ISLAS ABC DURANTE EL PLEISTOCENO",
+    "authors": "Mariana Yazmin Hernández Castillo, Roberto-Emiliano Trejo-Salazar, Jaime Gasca-Pineda, Rosalinda Tapia-López, Giovani Hernández-Canchola y Livia León-Paniagua"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A33-EL ENRIQUECIMIENTO AMBIENTAL COMO HERRAMIENTA PARA INCREMENTAR LA DIVERSIDAD CONDUCTUAL EN UN EJEMPLAR DE NUTRIA NEOTROPICAL (Lontra annectens)",
+    "authors": "Vania Lorena Figueroa Rodríguez y Mayra Vianey Gómez-Naranjo"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A34-HÁBITOS ALIMENTARIOS DE LA ZORRA GRIS (Urocyon cinereoargenteus) EN EL CERRO DEL CHUMIL, JANTETELCO, MORELOS",
+    "authors": "Paula Natalia Alvarez Ramirez y Rachel M. Vallejo"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A35-REGISTROS ATÍPICOS GEOGRÁFICOS Y AMBIENTALES SUGIEREN UN NICHO CLIMÁTICO MÁS AMPLIO EN EL MURCIÉLAGO FRUGÍVORO Centurio senex",
+    "authors": "Andrea Valencia-Zavala, Iván Hernández-Chavez y Giovani Hernández-Canchola"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A36-MAMÍFEROS SILVESTRES DE UN ECOTONO DE BOSQUE MESÓFILO DE MONTAÑA Y BOSQUE TROPICAL PERENNIFOLIO, EN LA SIERRA NORTE DE PUEBLA",
+    "authors": "Amairany Larissa Nolasco-Soto, Rodolfo García-Collazo, Ramón Arturo León Martínez y Jonathan Díaz Nicolas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A37-PATRONES DE ACTIVIDAD DEL COATÍ (Nasua narica) Y SUS DEPREDADORES EN BEBEDEROS ARTIFICIALES EN LA SELVA MAYA, MÉXICO",
+    "authors": "José Mauricio Méndez Tun, Kevin Manuel Uitz koyoc, Fernando M. Contreras Moreno, Denise Vaillard Ahrens, Daniel Jesús Espinoza, Edwin Hernández López, Johan Ahieser Uc Medina, Héctor M. J. López Castilla y Pedro Bautista Ramírez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A38-COMPORTAMIENTO DE Xerospermophilus spilosoma EN PARQUES CON PRESENCIA DE HUMANOS EN CIUDAD JUÁREZ",
+    "authors": "Gretel Arellano Yépiz y Jesús Manuel Martínez Calderas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A39-¿EL TAMAÑO IMPORTA? INTERACCIÓN DE LOS MAMÍFEROS CON EL COMPLEJO Dioon edule-angustifolium",
+    "authors": "David Balderas-González, Angel Gustavo López-Saucedo, Eduardo Martínez-Martínez y Fernando Isaac Gastelum-Mendoza"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A40-DE LA COLECCIÓN AL CIUDADANO: CINCO SIGLOS DE REGISTROS Y DISTRIBUCIÓN POTENCIAL DEL ARMADILLO NUEVE BANDAS (Dasypus novemcinctus) EN MÉXICO",
+    "authors": "Víctor Manuel Ramírez-Ramos, Claudia Ballesteros-Barrera, Bárbara Vargas-Miranda, María del Rocío Zárate-Hernández, Angélica Martínez-Bernal y Selene Ortíz-Burgos"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A41-DIVERSIDAD DE MAMÍFEROS EN DOS PAISAJES DE TAMAULIPAS: EL IMPACTO DE LA SUCESIÓN ECOLÓGICA",
+    "authors": "Melissa Ponce-Marroquin, Santiago Niño-Maldonado, Vannia del Carmen Gómez-Moreno, Juana María Cornonado-Blanco, Jorge Alberto Sánchez-Walle y José Juan Vela-Puga"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A42-PRIMER REGISTRO DE UNA LESIÓN PAPILOMATOSA EN UN INDIVIDUO SILVESTRE DE Cratogeomys fumosus EN EL CENTRO DE MÉXICO",
+    "authors": "Ángel Rodríguez-Moreno, Zarah Sosa, Margarita García-Luis y Víctor Sánchez-Cordero"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A43-¿JAGUARES EN GUANAJUATO? UN NUEVO ESLABÓN PARA LA CONECTIVIDAD DEL JAGUAR EN MÉXICO",
+    "authors": "Juan Felipe Charre-Medellín, Hernando Rodríguez-Correa, Laura A. Chang-Martínez, Esmar O. Guzmán-Díaz, Raúl Álvarez-Jara y Ruben Isaac Gomez-Gomez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A44-COLECCIONES DIGITALES Y ACCESO REMOTO: EVALUACIÓN MORFOMÉTRICA DE CAPTURAS 2D DERIVADAS DE MODELOS 3D EN Desmodus rotundus",
+    "authors": "Rodrigo López-Guerrero y Giovani Hernández-Canchola e Ivan Hernández-Chávez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A45-MODELO DE DISTRIBUCIÓN POTENCIAL DEL BISONTE AMERICANO (Bison bison) EN MÉXICO",
+    "authors": "Jahzeel Naasón Martínez-Armenta, Ana Susana Estrada-Márquez, María G. Bravo-Vinaja, Marco T. Solano-De La Cruz y Martha Hernández-Rodríguez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A46-DIVERSIDAD DE MURCIÉLAGOS EN UN ÁREA DE CONSERVACIÓN EN TUXPAN, VERACRUZ",
+    "authors": "Roberto Francisco Rubio-Jiménez, Carlos Miranda-Wing y Juan Manuel Pech-Canché"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A47-DAÑO CROMOSÓMICO Y PERFIL LEUCOCITARIO EN MURCIÉLAGOS DE UN AGROSISTEMA CON EXPOSICIÓN A PESTICIDAS",
+    "authors": "Itzel E. Ramos G., Montserrat Rangel M., Hannia Villarreal V., David Alfonso Rivera Ruiz, Rodrigo García Morales, Gastón Contreras Jiménez, Alejandra Paola Romero Ramírez y L. Gerardo Herrera M."
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A48-PATRONES DE ACTIVIDAD DE JAGUAR, PUMA Y SUS PRESAS EN LA ZONA NORTE DE LA RESERVA DE LA BIOSFERA CALAKMUL",
+    "authors": "Denise Vaillard Ahrens, José Mauricio Méndez Tun, Daniel Jesús Espinoza, Khiavett Guadalupe Sánchez Pinzón y Fernando M. Contreras-Moreno"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A49-CARACTERIZACIÓN DE LA CACERÍA DE LOS MAMÍFEROS EN COMUNIDADES DE LA ZONA SUR DEL ESTADO DE HIDALGO",
+    "authors": "Andrea Zipatli González Trejo, Gerardo Sánchez Rojas y Gonzalo Herrera Muñoz"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A50-PERFIL DE HORMONAS ESTEROIDES SEXUALES EN MACHOS Y HEMBRAS DEL MURCIÉLAGO Mormoops megalophylla DURANTE SU CICLO REPRODUCTIVO",
+    "authors": "Fernando Salgado-Mejia, Gihovani Ademir Samano-Barbosa, Ildico Abril Maldonado-Contreras, Edith Arenas-Ríos, Arturo Salame-Méndez y Ricardo López-Wilchis"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A51-REPRODUCCIÓN DE Mimon cozumelae EN UNA OBRA DE DRENAJE TRANSVERSAL DURANTE LA AMPLIACIÓN DE UNA CARRETERA EN CAMPECHE",
+    "authors": "Griselda Escalona-Segura, José D. Cú-Vizcarra, Karla P. Borges-Jesús y Jorge A. Vargas-Contreras"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A52-CIRCULACIÓN DE Borrelia EN UN ENSAMBLAJE DE ROEDORES SILVESTRES Y SUS ECTOPARÁSITOS EN UNA COMUNIDAD MARGINADA DE PUEBLA",
+    "authors": "Daniela Hermosilla-Díaz  y Pablo Colunga-Salas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A53-ESTADO DEL CONOCIMIENTO DE LA MARTUCHA (Potos flavus) EN MÉXICO",
+    "authors": "Avelyn Irene Amaya-Dominguez, Juan Felipe Francisco-Hernández, Juan Manuel Pech-Canché, Carlos Miranda-Wing y Blanca Esther Raya-Cruz"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A54-RIQUEZA Y PATRÓN DE ACTIVIDAD DE MAMÍFEROS MEDIANOS DEL MUNICIPIO DE LAS MINAS, VERACRUZ",
+    "authors": "Oscar Jared Oliveros-Juárez, Jesús Martínez-Vázquez y Rosa María González-Monroy"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A55-REINTRODUCCIÓN DE FAUNA SILVESTRE EN MÉXICO: PATRONES Y VACÍOS DEL CONOCIMIENTO A PARTIR DE UN ANÁLISIS BIBLIOMÉTRICO",
+    "authors": "Esperanza de Luna-Román, Michelle Ivonne Ramos-Robles, José Antonio Hernández-Herrera y José Javier Ochoa-Espinoza"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A56-USO DE NIDOS ABANDONADOS POR EL RATÓN TLACUACHE DEL BALSAS Tlacuatzin balsasensis",
+    "authors": "Tzeithel Josseline Castro, Héctor Emmanuel Cortés Pastrana, Carlos Alberto Montalbán Huidobro, Luis Bonola Vichido, José Antonio Guerrero y Juan Manuel Uriostegui-Velarde"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A57-CORTISOL Y CORTICOSTERONA EN MURCIÉLAGOS FRUGÍVOROS DE UNA ZONA SUBURBANA DEL SUR DE MÉXICO",
+    "authors": "Rosa María Gómez-Ugalde, Dulce Verónica Santiago-Ramírez y Judith Ruiz-Luna"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A58-DIVERSIDAD Y FENOLOGÍA DE ROEDORES EN UN PARQUE ECOLÓGICO SUBURBANO DE ZACATECAS",
+    "authors": "Carla Michelle Rodríguez-Reveles, Elizabeth A. Martínez-Salazar y Rogelio Rosas-Valdez"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A59-REPRODUCCIÓN Y PROPORCIÓN DE SEXOS EN TRES MURCIÉLAGOS FILOSTÓMIDOS EN LA SELVA LACANDONA, CHIAPAS, MÉXICO",
+    "authors": "Isabel Gómez-Martínez y Rodrigo García-Morales"
+  },
+  {
+    "day": "Martes 20",
+    "time": "15:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles I",
+    "title": "A60-RIQUEZA Y COMPOSICIÓN DE MAMÍFEROS MEDIANOS Y GRANDES EN EL ADVC SATA YUKU N´DAA, OAXACA, MÉXICO",
+    "authors": "Sara Lilia Cortés Lauro y Miguel Briones Salas"
+  },
+  {
+    "day": "Martes 20",
+    "time": "17:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "LA CACERÍA DE MAMÍFEROS EN MÉXICO: ¿FACTOR DE AMENAZA O ALTERNATIVA DE CONSERVACIÓN?",
+    "authors": "Dr. Eduardo Naranjo Piñera"
+  },
+  {
+    "day": "Martes 20",
+    "time": "18:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Presentación de libro",
+    "title": "EL JAGUAR EN MÉXICO: PATRIMONIO AMBIENTAL Y SOCIOCULTURAL",
+    "authors": "Octavio Rosas y  Rogelio Carrera Treviño"
+  },
+  {
+    "day": "Martes 20",
+    "time": "19:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Presentación de libro",
+    "title": "RIQUEZA Y CONSERVACIÓN DE LOS MAMÍFEROS EN MÉXICO A NIVEL ESTATAL VOLUMEN II",
+    "authors": "Yolanda Hortelano Moncada y Gloria Magaña Cota"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "08:00",
+    "venue": "Patio de aulas",
+    "type": "Logística",
+    "session": "Registro",
+    "title": "Registro",
+    "authors": ""
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "09:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "ECOLOGÍA SIN ARMONÍA: MAMÍFEROS POCO CARISMÁTICOS EN AMBIENTES ANTROPIZADOS",
+    "authors": "Dr. Rafael Avila Flores"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Fotografia de grupo",
+    "title": "Fotografia de grupo",
+    "authors": ""
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "SESIÓN DE CARTELES II",
+    "title": "SESIÓN DE CARTELES II",
+    "authors": ""
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B1-MATERNIDAD DE LOS MURCIÉLAGOS",
+    "authors": "Niños de 6o grado Primaria Martha Alicia Reyes Caballero"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B2-MURCIÉLAGOS EN LA CULTURA",
+    "authors": "Niños de 6o grado Primaria Martha Alicia Reyes Caballero"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B3-IMPACTO DEL CAMBIO CLIMÁTICO EN LOS MURCIÉLAGOS",
+    "authors": "Niños de 6o grado Primaria Martha Alicia Reyes Caballero"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B4-DISTRIBUCIÓN, ECOLOGÍA Y CONSERVACIÓN DE Sylvilagus graysoni, EL CONEJO DE LAS ISLAS TRES MARÍAS, MÉXICO",
+    "authors": "Felipe Osuna y Consuelo Lorenzo"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B5-PHYLLOSTOMIDAE EN LA CUENCA DEL BALSAS DEL ESTADO DE PUEBLA",
+    "authors": "Laura Torres-Morales, Joselin Itzel Martínez-Ruiz, Raymundo Zepeda-Sibaja, Lorena Moreno-Olivera, Rosa María González-Monroy y Jesús Martínez-Vázquez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B6-PATRONES DE ACTIVIDAD DEL VIEJO DE MONTE (Eira barbara) EN LA SELVA LACANDONA, CHIAPAS, MÉXICO",
+    "authors": "Mariana Ramírez-Díaz, Paulina Arroyo-Gerala, David A. Prieto-Torres, Zaira Y. González-Sausedo y Pablo C. Hernández-Romero"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B7-COMPARACIÓN DE LA DIETA DEL CACOMIXTLE (Bassariscus astutus) EN DOS ZONAS DEL SUR DE PUEBLA",
+    "authors": "Jesús Martínez-Vázquez, Rosa María González-Monroy y Pedro Merlo-Cinta"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B8-MURCIÉLAGOS INSECTÍVOROS EN FRAGMENTOS DE SELVA TROPICAL EN CHIAPAS, MÉXICO: ANÁLISIS PRELIMINAR DE SU DIVERSIDAD",
+    "authors": "Karla Sofia Ortiz-Gregor, Rodrigo García-Morales y M. Cristina MacSwiney G."
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B9-DIETA DE OSO NEGRO MEXICANO (Ursus americanus eremicus) EN SITIOS CON ACTIVIDAD AGRÍCOLA, GRAL. ZARAGOZA, NUEVO LEÓN",
+    "authors": "Laura Eliza Montaño García, Carlos Fabian Terrazas Tzontecomani y Juan Luis Peña Mondragón"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B10-LINAJES OCULTOS DEL DESIERTO: FILOGEOGRAFÍA Y VARIACIÓN CLIMÁTICA EN LAS MUSARAÑAS DESÉRTICAS",
+    "authors": "Issac Camargo, Leticia Cab-Sulub y Sergio Ticul Álvarez-Castañeda"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B11-MAMÍFEROS DEL EJIDO LA CASITA, GENERAL CEPEDA, COAHUILA",
+    "authors": "Arely Guadalupe Gutiérrez-Mares, David Mercado-Morales y Evelyn Rios"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B12-BIOSEGURIDAD EN COLECCIONES MASTOZOOLÓGICAS",
+    "authors": "Diego F. García-Mendoza y Celia López-González"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B13-ENTRE AZOTEAS Y PARQUES: FOMENTANDO LA COEXISTENCIA CON EL CACOMIXTLE, Bassariscus astutus, EN LA CIUDAD DE MÉXICO",
+    "authors": "Paulina Plascencia Sánchez, Pablo Cesar Hernández-Romero y David A. Prieto Torres"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B14-USO DIFERENCIADO DE LOS ELEMENTOS DEL PAISAJE Y ABUNDACIA DEL CHICHIMOCO DE COAHUILA Neotamias solivagus",
+    "authors": "Ester Lama-Moya, David Mercado-Morales y Evelyn Rios"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B15-MÉTODOS DE DELIMITACIÓN DE ESPECIES SUGIEREN QUE LA DIVERSIDAD DEL GÉNERO Habromys PODRÍA ESTAR SOBREESTIMADA",
+    "authors": "Emilio Paz-Lugo, Livia León-Paniagua y Giovani Hernández-Canchola"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B16-IMPORTANCIA DE LOS MURCIELAGOS INSECTÍVOROS EN EL SISTEMA LACUSTRE EJIDOS DE XOCHIMILCO Y SAN GREGORIO ATLAPULCO",
+    "authors": "Malinalli Cortés Marcial, José Antonio Ocampo Cervantes y Gabriela E. Medina Cruz"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B17-DIVERSIDAD DE MAMÍFEROS MEDIANOS Y GRANDES EN UN BOSQUE TROPICAL SECO DE LA SIERRA MADRE DEL SUR EN GUERRERO, MÉXICO",
+    "authors": "Eliazin Gómez-Cárdenas, Martha Alicia Velázquez-Machuca, Guillermo Herrera-Arreola, Gustavo Cruz-Cárdenas, Eduardo Mendoza y Celia López-González"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B18-ACTIVIDAD ESPACIO - TEMPORAL DEL ENSAMBLAJE MORMOPIDAE - NATALIDAE EN AMBIENTES ANTROPIZADOS. LA PLASTICIDAD VOCAL COMO MECANISMO DE SEGREGACION COMPETITIVA",
+    "authors": "Fernando Salgado-Mejia, Ildico Abril Maldonado-Contreras, Gihovani Ademir Samano-Barbosa y Ricardo López-Wilchis"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B19-EVALUACIÓN TAXONÓMICA, GEOGRÁFICA Y CURATORIAL DE LA COLECCIÓN DE MAMÍFEROS DEL CENTRO DE INVESTIGACIÓN EN BIODIVERSIDAD Y CONSERVACIÓN (CIBYC-UAEM)",
+    "authors": "Luna Valeria Pineda Cordoba, Daily Martínez-Borrego, Daryl D. Cruz, Francisco X. González-Cózatl y Elizabeth Arellano Arenas"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B20-REGISTROS DE FELINOS (FAMILIA: FELIDAE) EN EL ESTADO DE VERACRUZ",
+    "authors": "Elí Cassio-Valdez y Carlos Miranda-Wing"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B21-¿TOPO, MUSARAÑA, RATÓN O MURCIÉLAGO? EVIDENCIAS RECIENTES SOBRE EL ORIGEN DE LOS HANTAVIRUS",
+    "authors": "Ricardo Medina Juárez, Ingrid Adriana Hernández Gómez y Pablo Colunga-Salas"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B22-DIVERSIDAD DE MAMÍFEROS SILVESTRES TERRESTRES EN EL MUNICIPIO DE MADERA, CHIHUAHUA",
+    "authors": "Mariana Carrasco Orozco, Juan Antonio Encina Domínguez, José Antonio Hernández Herrera y Erika Jasmín Cruz Bazán"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B23-DIFERENCIACIÓN DE NICHO ECOLÓGICO ENTRE POBLACIONES DE Trichechus manatus manatus DEL GOLFO DE MÉXICO Y LA REGIÓN CARIBE-CENTROAMERICANA",
+    "authors": "Andrea Sánchez Chicas y Omar García Castañeda"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B24-MONITOREO CONDUCTUAL PARA EL DISEÑO DE ENRIQUECIMIENTO AMBIENTAL EN DOS CHIMPANCÉS GERONTES (Pan troglodytes) BAJO CUIDADO PROFESIONAL",
+    "authors": "Karen Johana Miranda Segundo y Mayra Vianey Gómez Naranjo."
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B25-BREVE EXPLORACIÓN DE LAS INTERACCIONES HUMANO-GRANDES FELINOS Y OTROS MAMIFEROS EN LA SIERRA OCCIDENTAL DE JALISCO",
+    "authors": "Christian Oswaldo Aguirre-Solórzano, Carlos Eduardo Illescas-Malagón, Daniel Anguiano-Constante, Elsa Leticia Cuevas-Cibrián, Laura Murguía-Navarro, Lizardo Cruz-Romo y Sandra Petrone-Mendoza"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B26-DESCRIPCIÓN GEOGRÁFICA DE LA VARIBILIDAD ACÚSTICA DE Balantiopteryx plicata (PETERS, 1867)",
+    "authors": "Guillermo Martínez-Rodríguez, Lenin Sánchez-Calderón, Jorge Ortega Reyes y Melina Del Real-Monroy"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B27-MASTOFAUNA MEDIANA Y GRANDE REGISTRADA MEDIANTE FOTOTRAMPEO EN HUMEDALES Y MANGLARES DE TUXPAN, VERACRUZ",
+    "authors": "Diego Jesús Marroquín-López, Juan Manuel Pech-Canche, Carlos Miranda-Wing, Alberto González-Gallina, Patricio Guerrero, Francisco Javier Sosa-Sánchez y Mayari Madai Tejeda-Sánchez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B28-ANÁLISIS DE LAS INTERACCIONES HUMANO-OSO NEGRO (Ursus americanus) EN LOS MUNICIPIOS DE JAUMAVE Y MIQUIHUANA, TAMAULIPAS",
+    "authors": "Jaydi Michelle Mota López, Leroy Soria-Díaz, Nathalia Montserrat Castillo Huitrón, Carlos Barriga Vallejo y Claudia C. Astudillo Sánchez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B29-CONTAMINACIÓN POR FIBRAS PLÁSTICAS EN MURCIÉLAGOS FRUGÍVOROS (CHIROPTERA: PHYLLOSTOMIDAE) DE LAS MONTAÑAS CARAJÁS, AMAZONIA, BRASIL",
+    "authors": "Letícia Lima Correia, André Mourão Batista, Anderson Z. Freitas, Niklaus U. Wetter y Thiago Bernardi Vieira"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B30-MODELACIÓN ESPACIAL DEL RIESGO DE DEPREDACIÓN DE GANADO POR JAGUAR EN EL SUR DE LA SELVA LACANDONA, MÉXICO",
+    "authors": "Paulina Arroyo-Gerala, J. Antonio de la Torre, Juan Daniel Monzón González y Carlos Javier Samayoa Sánchez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B31-REGISTROS DE ZORRILLOS (FAMILIA: MEPHITIDAE) EN EL ESTADO DE VERACRUZ",
+    "authors": "Ángel Gabriel Pérez Del Ángel y Carlos Miranda-Wing"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B32-COMPORTAMIENTO SOCIAL DE Artibeus intermedius EN UN SITIO URBANO DE MÉRIDA, YUCATÁN",
+    "authors": "Mariel Hernández Del Toro y M. Cristina MacSwiney G."
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B33-DIVERSIDAD DE ECTOPARÁSITOS (ACARI: IXODIDAE) ASOCIADOS A MASTOFAUNA SILVESTRE DEL ESTADO DE NUEVO LEÓN",
+    "authors": "Gisela A. León-Espinosa, Marcela Alejandra Aguallo-Pérez, David Salomón Carrera-Torres, Andrés Eduardo Ríos-Saldaña y Beatriz López-Monroy"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B34-DIVERSIDAD DE CRICÉTIDOS (RODENTIA) ASOCIADOS A MATORRAL XERÓFILO CON ACTIVIDADES ANTRÓPICAS EN GUADALUPE, ZACATECAS, MÉXICO",
+    "authors": "Jefsiba Trejo-Vidal, Elizabeth Aurelia Martínez-Salazar y Rogelio Rosas-Valdez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B35-COLECCIONES DERIVADAS DE LA COLECCIÓN NACIONAL DE MAMÍFEROS (CNMA), UNAM",
+    "authors": "Ambar Yamil Sánchez-Sánchez y Yolanda Hortelano-Moncada"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B36-EFECTO DEL ENRIQUECIMIENTO EN EL BIENESTAR DE CEBRAS DE GRANT (Equus quagga boehmi)",
+    "authors": "Natalia Cruz-Cuba y Mayra Vianey Gómez-Naranjo"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B37-PERCEPCIONES Y USOS DE LOS MAMÍFEROS DE LA CHINANTLA OAXAQUEÑA",
+    "authors": "Camelia Elizabeth Gómez-Herrera, María Delfina Luna-Krauletz y Rosa Elena Galindo-Aguilar"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B38-PATRÓN DE ACTIVIDAD Y RIQUEZA ESPECÍFICA DEL ORDEN RODENTIA EN NUEVO PLAN DE LA NORIA, MUNICIPIO DE JOSÉ MARÍA MORELOS, QUINTANA ROO",
+    "authors": "Javier Romualdo Hoil Chan, Jorge Armando López Chan y Leopoldo Querubin Cutz"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B39-DELIMITACIÓN DE UNIDADES DE MANEJO REGIONAL PARA EL BORREGO CIMARRÓN EN BAJA CALIFORNIA: UNA APLICACIÓN DE LOS MODELOS DE DISTRIBUCIÓN",
+    "authors": "Enrique de Jesús Ruiz-Mondragón, Fernando Isaac Gastelum-Mendoza, Guillermo Romero-Figueroa, Crystian-Sadiel Venegas Barrera, María Evarista Arellano-García, Israel Guerrero-Cárdenas, Eloy Alejandro Lozano-Cavazos y Raul Valdez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B40-DIETA EN TRES MESOCARNÍVOROS SIMPÁTRICOS DEL BOSQUE UAKUSI EN MICHOACÁN",
+    "authors": "Jesús Manuel Sánchez Caballero"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B41-MONITOREO DE MAMÍFEROS EN EL PARQUE NACIONAL DZIBICHALTÚN",
+    "authors": "Pedro E. Nahuat-Cervera, Ana L. Rivas-Villegas, Daniel R. Durán-Arceo, José A. García de la Luz, Omarely Martínez-Chan y Galia G. González-Guillen"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B42-PROCEDIMIENTO ANALÍTICO PARA LA DETERMINACIÓN DE ELEMENTOS TRAZA EN MURCIELAGOS DESPUÉS DE DIGESTIÓN POR MICROONDAS",
+    "authors": "Rocío García-Martínez, Anaid Mora-Villa y Livia León Paniagua"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B43-ATROPELLAMIENTOS DE MAMÍFEROS EN VERACRUZ",
+    "authors": "Mayari Madai Tejeda-Sánchez, Carlos Miranda-Wing, Juan Manuel Pech-Canché y Julio Adrián Lima-Lima"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B44-MAMÍFEROS DE TEZONTEPEC DE ALDAMA, HIDALGO",
+    "authors": "Itzayana Berenice Gress-Bernal, Yolanda Hortelano-Moncada y Diego Emilio Martínez-Delgado"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B45-HELMINTOFAUNA DE QUIRÓPTEROS DE LA ESTACIÓN DE BIOLOGÍA TROPICAL LOS TUXTLAS, VERACRUZ",
+    "authors": "Luz Andrea Jiménez-Prado, Ángel Rodríguez-Moreno, Víctor Sánchez-Cordero, Gabriel Gutiérrez-Granados y Sara Angelica Ramírez-Cañas"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B46-EVALUACIÓN DE UN PROGRAMA DE EDUCACIÓN AMBIENTAL SOBRE MURCIÉLAGOS EN EL NORTE DE MÉXICO",
+    "authors": "Cecilia Paola Esparza Alonso, Aquetzalli Nayelli Rivera Villanueva, Antonio Guzmán Velasco y Francisco Miguel Puente Guevara"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B47-LA COLECCIÓN DE VERTEBRADOS DE LA UNIVERSIDAD AUTÓNOMA DE BAJA CALIFORNIA: 40 AÑOS DE HISTORIA DE MAMÍFEROS TERRESTRES",
+    "authors": "Aldo Yahir Rodríguez-Rayas, Marlenne Vargas-Medrano, Claudia Alejandra Reyes-Valdez, Gorgonio Ruiz-Campos y Aldo Antonio Guevara-Carrizales"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B48-PATRONES DE ACTIVIDAD DE Panthera onca, Puma concolor Y PRESAS POTENCIALES EN LA MESETA DE CACAXTLA, SINALOA",
+    "authors": "Mariana Alejandra Patiño-Almaraz, Alejandro Salinas-Melgoza y Rodrigo Núñez-Pérez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B49-IMPACTO DE LOS HURACANES EN LA DIETA DE LOS FELINOS (Panthera onca Y Puma concolor) EN LA RESERVA DE LA BIOSFERA CHAMELA-CUIXMALA",
+    "authors": "Paola Pedroza Vargas, Alejandro Salinas Melgoza y Rodrigo Núñez Pérez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B50-PARTICIÓN DE LA DIVERSIDAD DE MURCIÉLAGOS FILOSTÓMIDOS EN UN PAISAJE ANTROPIZADO EN LA SELVA LACANDONA, CHIAPAS",
+    "authors": "Rodrigo García-Morales, Miguel Alfonso Ortega Huerta y Miguel Jácome-Flores"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B51-EVALUACION DE LA ABUNDACIA Y DIVERSIDAD DE MAMIFEROS UTILIZANDO CAMARAS TRAMPA, EN CASAS GRANDES, CHIHUAHUA",
+    "authors": "Omar Peñuelas, John F. Aristizábal y Jesús Manuel Martínez-Calderas"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B52-ANÁLISIS COLORIMÉTRICO: EVIDENCIA DE DIMORFISMO SEXUAL EN EL MURCIÉLAGO FRUGÍVORO Sturnira parvidens EN MÉXICO",
+    "authors": "Erick Ariel González Sánchez, Sandra Marisol Ramírez Barrera, Blanca Estela Hernández Baños y Giovani Hernández Canchola"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B53-PATRONES ESTACIONALES DE MARCAJE OLOROSO EN COYOTES (Canis latrans) SILVESTRES DE LA RESERVA DE LA BIOSFERA “LA MICHILÍA”",
+    "authors": "Jesús A. Álvarez-Vázquez, John W. Orta, Jorge Servín y Carolina Valdespino"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B54-MURCIÉLAGOS ENTRE CASAS Y COMUNIDAD: REGISTROS CIUDADANOS, CONSERVACIÓN Y VIGILANCIA SANITARIA EN TEPIC, NAYARIT",
+    "authors": "Gabriela Rosario Peña-Sandoval, Elsa Margarita Figueroa-Esquivel, Rocío Vega Frutis, Ana María Hanan Alipi, Rebeca de Haro Mota y Víctor Luja Molina"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B55-COMPORTAMIENTO DE Otospermophilus variegatus Y Sciurus niger EN RELACIÓN CON LA VEGETACIÓN EN EL PARQUE URBANO EL CHAMIZAL, JUÁREZ, CHIHUAHUA",
+    "authors": "Camila Adriana Ordaz-Hernández y Jesús Manuel Martínez-Calderas"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B56-EL JAGUAR Y EL TURISMO NO REGULADO EN EL PANTANAL, BRASIL",
+    "authors": "Angel Tadeo Morales Chávez, Andrea Sánchez Chicas, Daniela Padilla Díaz y Alejandra Galindo Cruz"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B57-PROPUESTA DE PROGRAMA DE ACCIÓN PARA LA CONSERVACIÓN DEL BORREGO CIMARRÓN (Ovis canadensis) EN MÉXICO",
+    "authors": "Oscar Eduardo Covarrubias-Treviño, Juan Antonio Garcia-Salas, Alan Sergio López Villareal, Leonardo Samuel Esquivel Martinez, Daniel Daberat de Llano y Daniela Alejandra Trujillo-Avila"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B58-INTERACCIÓN ESPACIO-TEMPORAL DEL PUMA (Puma concolor) Y SUS PRESAS EN EL OCCIDENTE DE MÉXICO",
+    "authors": "Carmina Alejandra Domínguez-Monroy, Alejandro Salinas y Rodrigo Núñez Pérez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "10:30",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles II",
+    "title": "B59-GUÍA ILUSTRADA DE MAMÍFEROS TERRESTRES Y VOLADORES EN ÁREAS NATURALES PROTEGIDAS Y PERTURBADAS DEL ESTADO DE GUANAJUATO",
+    "authors": "Luis Ángel Chávez Mendoza y Antonio García Méndez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "13:00",
+    "venue": "",
+    "type": "Logística",
+    "session": "Comida",
+    "title": "Comida",
+    "authors": ""
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "¿EXTRAPOLACIÓN RESTRINGIDA O NO? UN ENFOQUE PERSONALIZADO E INFORMADO PARA TRANSFERIR MODELOS DE NICHO ECOLÓGICO",
+    "authors": "Gonzalo E. Pinilla-Buitrago y Jamie M. Kass y Robert P. Anderson"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Comportamiento",
+    "title": "EFECTO DEL ACOPLAMIENTO EN LA RIQUEZA CONDUCTUAL DE DOS EJEMPLARES DE Canis latrans",
+    "authors": "Sara Raquel García-Arias y Mayra Vianey Gómez Naranjo"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Sistemática y genética",
+    "title": "ESTRUCTURA GENÉTICA DE Heteromys irroratus EN UN PAISAJE MODIFICADO DEL CENTRO DE MÉXICO",
+    "authors": "Mizraim Méndez-Espíndola, Eduardo Felipe Aguilera-Miller y Barbara Cruz Salazar"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Microbiota y ecoinmunología",
+    "title": "ASOCIACIÓN DE LA RESPUESTA INMUNE CON CAMBIOS INDUCIDOS POR ANTIBIÓTICO EN LA MICROBIOTA INTESTINAL DEL MURCIÉLAGO VAMPIRO COMÚN Desmodus rotundus",
+    "authors": "Iván Cabrera-Campos, Rafael Ávila-Flores, David A. Rivera-Ruiz, Luisa I. Falcón, Osiris Gaona y L. Gerardo Herrera M."
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:00",
+    "venue": "AULA BS303 Odocoileus",
+    "type": "Ponencia",
+    "session": "Mesa de trabajo",
+    "title": "MESA DE TRABAJO COEXISTENCIA HUMANO-FAUNA SILVESTRE Y SU VINCULACIÓN CON EL DESARROLLO DE POLÍTICAS PÚBLICAS EN MÉXICO",
+    "authors": ""
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DESACOPLAMIENTO ENTRE AMPLITUD Y ESTRUCTURA INTERNA DEL NICHO ECOLÓGICO EN MURCIÉLAGOS NEOTROPICALES",
+    "authors": "Iván Hernández-Chávez y Livia León-Paniagua"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Comportamiento",
+    "title": "LA CONDUCTA COMO ADVERTENCIA PREVIA DE LA AUSENCIA DE LA ESPECIE. RESPUESTA CONDUCTUAL FRENTE A LA PERTURBACIÓN EN Tapirella bairdii",
+    "authors": "Rebeca González Aldana y Paulina Arroyo-Gerala"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Sistemática y genética",
+    "title": "¿UNA ESPECIE O VARIOS LINAJES? EVIDENCIA FILOGENÓMICA EN ARDILLAS DE TIERRA DEL GÉNERO Xerospermophilus",
+    "authors": "Sergio Albino Miranda, Alberto González-Romero, Giovani Hernández Canchola y Jorge Galindo"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Microbiota y ecoinmunología",
+    "title": "LA INMUNIDAD HUMORAL CONSTITUTIVA DEL MURCIÉLAGO MIGRATORIO PARCIAL Leptonycteris yerbabuenae ESTÁ RELACIONADA CON LA MICROBIOTA FECAL DE CADA SEXO",
+    "authors": "David Alfonso Rivera-Ruiz, José Juan Flores-Martínez, Carlos Rosales, Luisa I. Falcón, Osiris Gaona, Marco Tulio Solano de la Cruz y L. Gerardo Herrera M"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "LA COMPETENCIA INTERESPECÍFICA COMO LIMITANTE EN LA COEXISTENCIA GEOGRÁFICA DE MURCIÉLAGOS NEOTROPICALES DE HOJA NASAL (PHYLLOSTOMIDAE)",
+    "authors": "Gerardo Dirzo-Uribe y Fabricio Villalobos"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Comportamiento",
+    "title": "DIVERSIDAD Y COOCURRENCIA DE MAMÍFEROS MEDIANOS Y GRANDES DE SAN RAFAEL AGUA PESCADITO, OAXACA, MÉXICO",
+    "authors": "Camelia Elizabeth Gómez-Herrera, María Delfina Luna-Krauletz y Rosa Elena Galindo-Aguilar"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Sistemática y genética",
+    "title": "REDEFINIENDO Peromyscus: EVIDENCIA FILOGENÓMICA Y MORFOLÓGICA REVELA DIVERSIDAD GENÉRICA OCULTA EN NEOTOMINAE",
+    "authors": "Susette Castañeda-Rico, Sergio Ticul Álvarez-Castañeda, Noé González-Ruiz, Joaquín Arroyo-Cabrales, Jesús E. Maldonado y Cody W. Edwards"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Microbiota y ecoinmunología",
+    "title": "ANÁLISIS COMPARATIVO DE LA MICROBIOTA DE LA LECHE MATERNA DE DOS ESPECIES DE MURCIÉLAGOS CON DIFERENTES HÁBITOS ALIMENTICIOS",
+    "authors": "Leslie M. Montes-Carreto, Hanya D. Arellano-Hernández, Esperanza Martínez-Romero, Osiris Gaona y José Antonio Guerrero"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DISTRIBUCIÓN POTENCIAL Y NICHO ECOLÓGICO DE Desmodus rotundus EN EL ESTADO DE ZACATECAS",
+    "authors": "Rosa María Ortiz-Badillo, Adriana Lucia Perea-Lugo, Óscar Eduardo España-Manríquez y Luz María Rosales- Acevedo"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Comportamiento",
+    "title": "PATRONES DE ACTIVIDAD DEL GATO MONTÉS (Lynx rufus) EN MÉXICO MEDIANTE CIENCIA CIUDADANA",
+    "authors": "Luis A. Alanis-Hernández, Amayrani E. Trejo-Montero, Gerardo Sánchez-Rojas, Jaime Manuel Calderón-Patrón, Mario C. Lavariega, Juan Pablo Esparza-Carlos y Luis Ignacio Íñiguez-Dávalos"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Sistemática y genética",
+    "title": "TAXONOMÍA INTEGRATIVA DEL MURCIÉLAGO DE VAN GELDER, Bauerus dubiaquercus: EVIDENCIA DE SEPARACIÓN DE LINAJES EN UN COMPLEJO DE ESPECIES",
+    "authors": "Carlos Alberto Barrera Cuellar, Jorge Ortega, Cristina Mac Swiney González y Sandra Milena Ospina Gárces"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "15:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Microbiota y ecoinmunología",
+    "title": "MICROBIOTA FECAL DEL MURCIÉLAGO FRUGÍVORO Artibeus hirsutus (CHIROPTERA: PHYLLOSTOMIDAE) EN LA CUEVA DEL SALITRE, MORELOS",
+    "authors": "Montserrat Monter-Rosales, Esperanza Martínez-Romero, José Antonio Guerrero y Leslie M. Montes-Carreto"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DINÁMICA PALEOCLIMÁTICA Y DISTRIBUCIÓN POTENCIAL DE Noctilio leporinus",
+    "authors": "Grecia E. Soto-López, Sandra M. Ospina-Garcés, Giovani Hernández-Canchola y Livia León-Paniagua"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Comportamiento",
+    "title": "USO DE HÁBITAT Y PATRÓN DE ACTIVIDAD DEL MARGAY EN UN BOSQUE TROPICAL DE QUINTANA ROO, MÉXICO",
+    "authors": "Sebastián E. Amaya-Luna, Nalleli E. Lara-Díaz, Carlos A. López-González y Jorge Luis Reyes-Díaz"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Evolución",
+    "title": "RASTREANDO HUELLAS INVISIBLES: SEÑAL FILOGENÉTICA EN LA MARGINALIZACIÓN ECOLÓGICA DE LOS CARNÍVOROS TERRESTRES",
+    "authors": "Carlos Luna-Aranguré y Julián A. Velasco"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "RIQUEZA DE ARTRÓPODOS ECTOPARÁSITOS ASOCIADOS CON MURCIÉLAGOS EN AMBIENTES CONTRASTANTES EN LA SELVA LACANDONA, MÉXICO",
+    "authors": "María Fernanda Sánchez-Cortés, Rodrigo García-Morales y Angel Herrera-Mares"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "FILOGEOGRAFÍA Y CONSERVADURISMO DE NICHO DE Pteronotus mexicanus Y P. mesoamericanus",
+    "authors": "Mario Alberto Peralta Pérez y Miguel. A. Briones Salas"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DIVERSIDAD Y ABUNDANCIA DE MAMÍFEROS ARBÓREOS EN LA ESTACIÓN DE BIOLOGÍA TROPICAL LOS TUXTLAS",
+    "authors": "J. Vladimir Rojas-Sánchez, Rosamond Ione Coates, Víctor Sánchez-Cordero, Mario C. Lavariega y José Juan Flores-Martínez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Evolución",
+    "title": "EVOLUCIÓN Y ESPECIALIZACIÓN DEL HÚMERO EN MUSARAÑAS DEL GÉNERO Cryptotis EN LAS MONTAÑAS DE AMÉRICA",
+    "authors": "M. Ángel León-Tapia y Lázaro Guevara"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "DIVERSIDAD DEL VIROMA EN TRES ESPECIES DE MURCIÉLAGOS EN DIFERENTES AMBIENTES DEL SUR DE ESPAÑA",
+    "authors": "Aline Méndez-Rodríguez, Juan Ledesma, Celia López-González, Heliot Zarza, Ricardo López-Wilchis, Nuria Labiod, Isabel Cuesta, Inmaculada Casas, Juan E. Echevarría y Ana Vázquez y Javier Juste"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "¿QUÉ TAN CONFIABLE ES GBIF? FILTROS AUTOMATIZADOS EN R APLICADOS A LOS ESCIÚRIDOS MEXICANOS",
+    "authors": "María José Morán-Gutiérrez, Leticia Cab-Sulub, Alondra Encarnación-Luévano, Alejandro Valdéz-Mondragón, Alfonso Medel-Narváez y Raúl O. Martínez Rincón"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "RELACIÓN DE LA RIQUEZA FLORÍSTICA Y CAMBIO DE COBERTURA VEGETAL SOBRE LA DENSIDAD POBLACIONAL DE Cynomys mexicanus",
+    "authors": "Elisa Paulina Zaragoza-Quintana, Andrés Eduardo Estrada-Castillón y Mauricio Cotera-Correa"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Evolución",
+    "title": "¿EXISTE MODULARIDAD EN LAS ALAS DE LOS MURCIÉLAGOS?",
+    "authors": "Martín Y. Cabrera-Garrido, Sandra M. Ospina-Garcés, Andrés Ramírez-Ponce, M. Cristina MacSwiney G., Luis D. Verde Arregoitia y Fabricio Villalobos"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "SEROPREVALENCIA DE SARS-CoV-2 EN POBLACIONES DE MURCIÉLAGOS DE REFUGIOS EN LA INTERFASE HUMANO – ANIMAL",
+    "authors": "Sidney Y. Martínez-Sánchez, Humberto Valdovinos-Torres, Jesús Martínez-Barnetche y José Antonio Guerrero"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DE LO NATURAL A LO ANTROPIZADO: CAMBIOS EN LOS PATRONES DE DIVERSIDAD DEL ORDEN CARNIVORA EN MÉXICO",
+    "authors": "Monserrat Juárez-Díaz, Mariana Munguía-Carrara, Andrés Lira-Noriega y Fabricio Villalobos"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DIVERSIDAD DE MURCIÉLAGOS EN UN PAISAJE AGROPECUARIO: 15 AÑOS DE MONITOREO EN EL VALLE DE OAXACA",
+    "authors": "Rosa María Gómez-Ugalde, Ernesto Hernández-Santiago y María Isabel Pérez-León"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Taxonomía",
+    "title": "MORFOMETRÍA CRANEAL COMO HERRAMIENTA TAXONÓMICA EN MEPHITIDAE: IDENTIFICACIÓN MÁS ALLÁ DE LA COLORACIÓN",
+    "authors": "Miriam Solís-Ruiz, Aldo Domínguez-De la Torre y Zamira Anahí Ávila-Valle"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "16:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "MURCIÉLAGOS Y ROEDORES REVELAN LA DIVERSIDAD OCULTA DE Trypanosoma Y EL PREDOMINIO DE TCIV EN ECOSISTEMAS TROPICALES CONSERVADOS",
+    "authors": "Carlos N. Ibarra-Cerdeña, Pilar Ibarra-López, Román Espinal-Palomino, César Rodríguez-Luna, Joel Moo-Millán, Salvador Montiel, Etienne Waleckx y Rodolfo Dirzo"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:00",
+    "venue": "Auditorio Central",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Taxonomía",
+    "title": "CATÁLOGO DE PELO DE GUARDIA DE PRESAS POTENCIALES DEL JAGUAR (Panthera onca) EN LA RESERVA DE LA BIOSFERA REGIÓN CALAKMUL",
+    "authors": "Sofia Amellali López Mendoza y Julieta Vargas Cuenca"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "LOS JAGUARES DEL ÁREA DE CONSERVACIÓN “EL ZAPOTAL” Y LOS EJIDOS ALEDAÑOS EN YUCATÁN",
+    "authors": "Anuar Hernández Saint Martin y V. Castelazo-Calva"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DIVERSIDAD BETA MULTIDIMENSIONAL DE MURCIÉLAGOS EN EL SUR DE MÉXICO",
+    "authors": "Natalia Martin Regalado, Jaime Calderón Patrón y Miguel Briones Salas"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "ENFERMEDADES Y PARASITISMOS EN LOS MAMÍFEROS EN MÉXICO: ANÁLISIS DE TENDENCIAS Y VACÍOS",
+    "authors": "Mayari Madai Tejeda-Sánchez, Juan Manuel Pech-Canché, Ana PatriciaAparicio-Lucas, Dalia Esmeralda Chávez-Martínez y Carlos Miranda-Wing"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "JAGUARDIANES DE LA SELVA: ESTRATEGIAS COMUNITARIAS PARA CONSERVAR AL JAGUAR EN LA SELVA LACANDONA, CHIAPAS",
+    "authors": "Uriel Alexander Morales Martínez, Jesús Aguilar Valencia, José Alfredo Antonio Ortíz, Florentino Bistrain Pérez Bravo, Taurino Camacho Aguilera, Enrique Nery Cruz, Faustino Joel Cruz, Nilo Felipe Dávila, Uriel Pablo Garcia, José Antonio Gómez Gómez, Asención Hernández Carbajal, Ernesto Hernández Céspedes, Irma Hernández Marcelino, Eva Herrera Chávez, Caralampio Jiménez Álvarez, Levi Jiménez Vázquez, José Manuel Marroquín Carrillo, Yaros Iván Marroquín Olan, Jaime Palacios Campo, Cristobal Piceno Chávez, Doroteo Ríos, Humberto Ríos, Cornelio Ríos Bautista, Juan Carlos Ríos Bautista, Esteban Rios Lorenzo, Epifanio Salgado Herrera, José Edilzar Santizo Pérez, Felipe Valencia Millán y Paulina Arroyo-Gerala"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "ANÁLISIS DE DIETA EN SEIS ESPECIES DE MURCIÉLAGOS FRUGÍVOROS EN UN BOSQUE TROPICAL SECO DEL PACÍFICO MEXICANO",
+    "authors": "Katia L. Bautista-Romero y Víctor Rosas-Guerrero"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "REDES DE INTERACCIÓN ENTRE HOSPEDEROS DE LOS ÓRDENES RODENTIA Y DIDELPHIMORPHIA, SUS ECTOPARÁSITOS Y PATÓGENOS EN MÉXICO, UNA REVISIÓN BIBLIOGRÁFICA",
+    "authors": "Eduardo Yesua Barrera Nava, Andrés Mauricio López Pérez, Claudia Elizabeth Moreno Ortega, Gerardo Sánchez Rojas, Ricardo Paredes León y Laura Harlan Backus"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "FUEGO Y MASTOFAUNA: PRIORIDADES DE CONSERVACIÓN EN EL SEMIDESIERTO QUERETANO",
+    "authors": "Tania Escalante, Oscar Campos y Diego R. García-Vélez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DIVERSIDAD ESTACIONAL DE MURCIÉLAGOS INSECTÍVOROS EN EL PACÍFICO MEXICANO",
+    "authors": "Marcial Alejandro Rojo Cruz y Luis Ignacio Iñiguez Dávalos"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "17:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "IDENTIFICANDO ASOCIACIONES VIRALES POTENCIALES EN PRIMATES DE AMÉRICA: UN ENFOQUE PREDICTIVO DE REDES",
+    "authors": "María del Carmen Villalobos‐Segura, Oscar Rico‐Chávez, Gerardo Suzán y Andrea Chaves"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "18:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "REFORZAMIENTO CONDUCTUAL DE CACERÍA EN LA ETAPA DE PRE-LIBERACIÓN COMO ESTRATEGIA PARA FORTALECER LA CONSERVACIÓN DEL LOBO MEXICANO (Canis lupus baileyi)",
+    "authors": "John W. Orta, Elías Márquez-Martínez, Jesús A. Álvarez-Vázquez, Miranda Rawlinson-Marín, Alejandro González, Zaira González, Enrique Martínez-Meyer y Jorge Servín"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "18:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "VARIACIÓN ESPACIAL Y ESTACIONAL DE LA DIETA DE Mimon cozumelae EN EL SURESTE DE MEXICO",
+    "authors": "María Paula Ahumada-Rueda, M. Cristina MacSwiney G. y Jorge Ortega"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "18:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "VARIACIÓN DE LA INFESTACIÓN DE PULGAS EN Peromyscus amplus EN DOS ESCALAS ESPACIALES",
+    "authors": "Jorge Iván Fernández Meza, Fernando Aguilar-Montiel, Luisa Rodríguez-Martínez y Jorge Vázquez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "18:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "PERMEABILIDAD DE UNA OBRA FERROVIARIA EN LAS POBLACIONES DE FELINOS SILVESTRES EN EL SURESTE DE MÉXICO",
+    "authors": "Carlos Eduardo Illescas Malagón, Juan Luis Peña Mondragón, Julieta Benítez Malvido, Enrique Martínez Meyer y Rodrigo Núñez Pérez"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "18:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "ENTRE FRUTOS Y MURCIÉLAGOS: COEXISTENCIA BAJO UN ENFOQUE FITOQUÍMICO",
+    "authors": "Francisco J. Aguirre-Crespo, Jorge A. Vargas Contreras, José L. Aragón-Gastelum, Mónica A. Guillén-Poot, Efraín Aguirre-Cortés y Geucilio G. Cabrera-Mis"
+  },
+  {
+    "day": "Miércoles 21",
+    "time": "18:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Enfermedades y parasitismos",
+    "title": "EL MAPACHE (Procyon lotor) COMO HOSPEDERO DEL PARÁSITO Dirofilaria (Nochtiella) tenuis EN LA PENÍNSULA DE YUCATÁN",
+    "authors": "Hernández-Núñez A, Vidal-Martínez V.M. y Aguirre-Macedo M.L."
+  },
+  {
+    "day": "Jueves 22",
+    "time": "08:00",
+    "venue": "Patio de aulas",
+    "type": "Logística",
+    "session": "Registro",
+    "title": "Registro",
+    "authors": ""
+  },
+  {
+    "day": "Jueves 22",
+    "time": "09:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "MAMMALS, MONTAÑAS, AND MORPHOLOGY: CLIMATE AND TOPOGRAPHY AS DRIVERS OF EVOLUTION AND ECOLOGY",
+    "authors": "Dr. David Polly"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Islas del cielo sin fronteras: Conectividad, diversificación y conservación en la región transfronteriza México-Estados Unidos",
+    "title": "REDEFINIENDO LAS ISLAS DEL CIELO EN EL OESTE DE AMERICA DEL NORTE UTILIZANDO EVIDENCIA BIOGEOGRAFICA CONVERGENTE Y TOPOCLIMATICA",
+    "authors": "Jason L. Malaney, Danniel J. Parsons, Jesús A. Fernández, Jennifer K. Frey y Joseph A. Cook"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "CICLO ANUAL DE DESARROLLO DE ASTAS DE Odocoileus virginianus couesi AL SUR DE LA SIERRA MADRE OCCIDENTAL, DURANGO, MÉXICO",
+    "authors": "Elías Márquez-Martínez, Jorge Servín y John Orta-López"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Simposio",
+    "session": "Hacia una visión integradora de las enfermedades zoonóticas y parasitarias en mamíferos de México",
+    "title": "MAMÍFEROS SILVESTRES Y GARRAPATAS EN MÉXICO: VACÍOS DE CONOCIMIENTO Y PERSPECTIVAS PARA EL ESTUDIO DE ENFERMEDADES TRANSMITIDAS POR VECTORES",
+    "authors": "Gabriela Aguilar Tipacamú, Carlos Alberto López González, Robert W. Jones y Andrea M. Olvera Ramírez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Socioecología y etnozoología",
+    "title": "APROVECHAMIENTO DE MAMÍFEROS SILVESTRES EN EL SUR DE LA SELVA MAYA, MÉXICO",
+    "authors": "Edwin Hernández-López, Kevin M. Uitz-Koyoc, Fernando M. Contreras-Moreno, Héctor M. J. López-Castilla y Daniel Jesús Espinosa"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Islas del cielo sin fronteras: Conectividad, diversificación y conservación en la región transfronteriza México-Estados Unidos",
+    "title": "UN ENFOQUE DE BIG DATA PARA EVALUAR LA BIODIVERSIDAD DE LAS ISLAS DEL CIELO",
+    "authors": "Danielle J. Parsons, Jason L. Malaney, Jesús A. Fernández, Lexi B. Baca, Samantha R. Bonawitz, Connor J. Burgin, Patricia G. Sotelo Chavira, Dale L. Fastle, Michael S. Fragua, Audrey K. Vanderhee y Joseph A. Cook"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "REGISTROS DE LESIONES Y ANOMALÍAS EN LA PIGMENTACIÓN EN MURCIÉLAGOS EN OAXACA, MÉXICO",
+    "authors": "Itandehui Hernández-Aguilar, Consuelo Lorenzo y Antonio Santos-Moreno"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Simposio",
+    "session": "Hacia una visión integradora de las enfermedades zoonóticas y parasitarias en mamíferos de México",
+    "title": "ESTRUCTURA GENÉTICA DE Borrelia burgdorferi: DIFERENCIACIÓN DE LINAJES ASOCIADOS CON ROEDORES",
+    "authors": "Daniela Hermosilla-Díaz y y Pablo Colunga-Salas"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Socioecología y etnozoología",
+    "title": "PROYECTO CH’O: ROEDORES URBANOS Y PARTICIPACIÓN CIUDADANA EN UN PUEBLO MÁGICO DEL NEOTRÓPICO MEXICANO",
+    "authors": "Gloria Tapia-Ramírez y Consuelo Lorenzo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Islas del cielo sin fronteras: Conectividad, diversificación y conservación en la región transfronteriza México-Estados Unidos",
+    "title": "ECTOPARÁSITOS DE MAMÍFEROS EN DOS ISLAS DEL CIELO DEL NORTE DE MÉXICO: DIVERSIDAD Y AFINIDADES BIOGEOGRÁFICAS",
+    "authors": "Roxana Acosta y Jesús A Fernández"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "LOS CAMBIOS ONTOGENÉTICOS DEL TAMAÑO CORPORAL SE ASOCIAN DÉBILMENTE CON LA TASA METABÓLICA BASAL EN Myotis velifer",
+    "authors": "Jafet Morales Castillo y Jorge Ayala Berdon"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Simposio",
+    "session": "Hacia una visión integradora de las enfermedades zoonóticas y parasitarias en mamíferos de México",
+    "title": "DETECCIÓN SEROLÓGICA DE BORRELIA SP. EN MAPACHES, RATAS DE CAMPO, GATOS, TLACUACHES Y BOVINOS EN MÉXICO",
+    "authors": "José A. Hernández Martínez, Gustavo Paniagua Campos, Sofía L. Luna Rojas, Edwin Vázquez Guerrero y J. Antonio Ibarra García"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "10:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Socioecología y etnozoología",
+    "title": "MÁS ALLÁ DE LAS CÁMARAS TRAMPA: EL PAPEL DEL CONOCIMIENTO ECOLÓGICO LOCAL EN EL MONITOREO DE MAMÍFEROS",
+    "authors": "R. Elena Galindo-Aguilar y Elvira Durán Medina"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Islas del cielo sin fronteras: Conectividad, diversificación y conservación en la región transfronteriza México-Estados Unidos",
+    "title": "ISLAS DEL CIELO EN COAHUILA, UN SISTEMA POR DESCUBRIR",
+    "authors": "Celia López-González"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "EN BUSCA DE PATRONES FISIOLÓGICOS Y DEMOGRÁFICOS EN UNA ESPECIE CON MIGRACIÓN PARCIAL: EL MURCIÉLAGO MAGUEYERO MENOR (Leptonycteris yerbabuenae)",
+    "authors": "L. Gerardo Herrera M., David Alfonso Rivera-Ruiz, Kenneth C. Welch, Alejandra Paola Romero Ramírez, Mildred A. Vázquez L., Gabriela Mastromonaco, Paula Mackie, Christine Gilman, Gerald Wilkinson y Juan Jesús Pellón Palacios"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Simposio",
+    "session": "Hacia una visión integradora de las enfermedades zoonóticas y parasitarias en mamíferos de México",
+    "title": "LAS COLECCIONES CIENTÍFICAS BAJO EL CONTEXTO DE LA ECOLOGÍA DE ENFERMEDADES: EL CASO DEL LABORATORIO DE ACAROLOGÍA",
+    "authors": "Ángel Herrera-Mares, Carmen Guzmán-Cornejo y Laura Del Castillo-Martínez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Socioecología y etnozoología",
+    "title": "DIMENSIONES SOCIOECOLÓGICAS DE LA CACERÍA DE FAUNA SILVESTRE EN CUATRO COMUNIDADES EJIDALES EN LA PENÍNSULA DE YUCATÁN",
+    "authors": "Abigail Marisol Alcaraz-Barranco, Lidia Ivonne Blásquez-Martínez, Sophie Calmé, Heliot Zarza y Cuauhtémoc Chávez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Islas del cielo sin fronteras: Conectividad, diversificación y conservación en la región transfronteriza México-Estados Unidos",
+    "title": "DIVERSIFICACION Y CONECTIVIDAD DE Sorex monticola IMPULSADAS POR EL CLIMA A TRAVES DE LAS ISLAS DEL CIELO DEL SUROESTE DE ESTADOS UNIDOS",
+    "authors": "Patricia G. Sotelo Chavira, Lexi B. Baca, Jason. L. Malaney, Danielle J. Parsons, Jesús A. Fernández y Joseph A. Cook"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "CARGA ALOSTÁTICA Y COBERTURA VEGETAL EN MURCIÉLAGOS Y ROEDORES SILVESTRES DE CAMPECHE, MÉXICO",
+    "authors": "Diana B. Ramírez-Gutiérrez, Gabriela F. Mastromonaco, Oscar Rico-Chávez y José I. Sánchez-Betancourt"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Simposio",
+    "session": "Hacia una visión integradora de las enfermedades zoonóticas y parasitarias en mamíferos de México",
+    "title": "TRIPANOSOMÁTIDOS EN MAMÍFEROS DE MÉXICO: DIVERSIDAD, ZOONOSIS Y EVOLUCIÓN",
+    "authors": "Javier Juárez-Gabriel, Irene Medina-Salazar, Luz Andrea Jiménez-Prado y Ingeborg Becker"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Socioecología y etnozoología",
+    "title": "PERCEPCIONES ZOOLÓGICAS TRADICIONALES Y ABUNDANCIA RELATIVA DE LA NUTRIA MESOAMERICANA (Lontra annectens) EN EL RÍO LOS PERROS, OAXACA",
+    "authors": "Dana Lizeth Tapia-Ortiz, Fabio Flores-Granados y Pablo César Hernández-Romero"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Islas del cielo sin fronteras: Conectividad, diversificación y conservación en la región transfronteriza México-Estados Unidos",
+    "title": "LA PERSISTENCIA DE UNA NORTEÑA EN LAS ISLAS DEL CIELO DEL SUROESTE (EL TOPILLO DE LOMO ROJO SUREÑO)",
+    "authors": "Dale L. Fastle, Jason L. Malaney y y Joseph A. Cook"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "EFECTO DEL SEXO Y EL TAMAÑO DE LA CAMADA EN EL PATRÓN DE CRECIMIENTO DE CRÍAS HUÉRFANAS DE Didelphis virginiana",
+    "authors": "Rosalinda Álvarez-Del Ángel, Jesús Daniel Priego-Vázquez, Karen Y. Cruz-Cortez, Rafael León-Madrazo, Rafael Ávila-Flores y Alba Z. Rodas-Martínez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Simposio",
+    "session": "Hacia una visión integradora de las enfermedades zoonóticas y parasitarias en mamíferos de México",
+    "title": "BUSCANDO AL GUSANO DE LA CARNE (Trichinella) EN MAMÍFEROS MEXICANOS",
+    "authors": "Claudia I. Muñoz-García, Viridiana Bran-Guzmán, Mirna V. Morales-Celis, Guiehdani Villalobos y Emilio Rendón-Franco"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Métodos y herramientas para el estudio de mamíferos",
+    "title": "DESARROLLO DE UNA HERRAMIENTA DIGITAL PARA LA IDENTIFICACIÓN DE MURCIÉLAGOS MEXICANOS",
+    "authors": "Agustín Mora Montero y Malinalli Cortés Marcial"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Islas del cielo sin fronteras: Conectividad, diversificación y conservación en la región transfronteriza México-Estados Unidos",
+    "title": "HISTORIA EVOLUTIVA DE Sorex merriami EN LAS ISLAS DEL CIELO DE NORTE AMÉRICA: UN ENFOQUE FILOGENÓMICO",
+    "authors": "Audrey K. Vanderhee, Danielle J. Parsons, Danielle M. Land, Patricia G. Sotelo Chavira, Jason L. Malaney, Jon L. Dunnum y Joseph A. Cook"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "CUANTIFICACIÓN DE METABOLITOS DE ESTEROIDES SEXUALES PARA INFERIR CICLOS REPRODUCTIVOS EN COYOTES (Canis latrans) Y ZORRAS GRISES (Urocyon cinereoargenteus) SILVESTRES",
+    "authors": "Jesús A. Álvarez-Vázquez, John W. Orta, Jorge Servín y Carolina Valdespino"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Simposio",
+    "session": "Hacia una visión integradora de las enfermedades zoonóticas y parasitarias en mamíferos de México",
+    "title": "15 AÑOS DE MONITOREO DE ENFERMEDADES INFECCIOSAS EN PROCIÓNIDOS SILVESTRES DE UN PARQUE URBANO: IMPORTANCIA DE ESTUDIOS A LARGO PLAZO",
+    "authors": "Emilio Rendón-Franco y Claudia Irais Muñoz-García"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "11:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Divulgación de la ciencia",
+    "title": "PERCEPCIONES SOCIOAMBIENTALES Y CONOCIMIENTOS DE ESTUDIANTES DE SECUNDARIA SOBRE LA IMPORTANCIA DE LOS MURCIÉLAGOS EN MORELIA, MICHOACÁN",
+    "authors": "Pamela Cruz Arévalo y Juan Luis Peña Mondragón"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Simposio",
+    "session": "Islas del cielo sin fronteras: Conectividad, diversificación y conservación en la región transfronteriza México-Estados Unidos",
+    "title": "ISLAS DEL CIELO DE MÉXICO: AVANCES Y PERSPECTIVAS",
+    "authors": "Jesús A Fernández, Andrea N. Olmos-Balderrama, Paulina Alzira Gardea y Alexia Chávez-Samaniego"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "DESCRIPCIÓN ANATÓMICA DE FETOS Y EMBRIONES DE MURCIÉLAGO DE LAS FAMILIAS PHYLLOSTOMIDAE Y VESPERTILIONIDAE",
+    "authors": "Nelly Herrera, Gabriela Sánchez-Fabila y Roberto Moreno-Colín"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Simposio",
+    "session": "Hacia una visión integradora de las enfermedades zoonóticas y parasitarias en mamíferos de México",
+    "title": "¿MURCIÉLAGOS O RATONES? EVALUANDO LA PREFERENCIA ALIMENTICIA DE Aedes aegypti",
+    "authors": "Daniel Rodríguez-Martínez, Betzabé Verónica-Murrieta, Diana Pérez-Staples, Maurillio López-Ortega, Francisco Díaz-Fleischer y Pablo Colunga-Salas"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Divulgación de la ciencia",
+    "title": "LOS MAMÍFEROS COMO RECURSO PARA LA EDUCACIÓN AMBIENTAL: UN CASO DE ESTUDIO EN EL PARQUE ECOLÓGICO LA PLANTA, MORELIA, MICHOACÁN",
+    "authors": "Raymundo Cervantes Barriga, Juan Manuel Lara Quesada, Salvador Ávila García y Rubén Isaac Gomez Gomez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Morfofisiología",
+    "title": "INFLUENCIAS EVOLUTIVAS Y AMBIENTALES EN LA FORMA CRANEAL Y LONGITUD DEL ANTEBRAZO EN Corynorhinus mexicanus (CHIROPTERA: VESPERTILIONIDAE)",
+    "authors": "Issachar L. López-Cuamatzi, Jorge Ortega y Sandra M. Ospina-Garcés y M. Cristina MacSwiney G."
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Divulgación de la ciencia",
+    "title": "MASTOPEDIA: MAMÍFEROS ENDÉMICOS DE MÉXICO",
+    "authors": "Adriana Montserrat Abascal-Tepalt, Mariana Ávila-Villa, Alberto Manuel Chío-Hernández, Erik David Espitia-López y María José Fuentes-González"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DEL INVENTARIO A LA CONSERVACIÓN: DIVERSIDAD Y DISTINTIVIDAD DE MAMÍFEROS EN UN SISTEMA MONTAÑOSO DE OAXACA",
+    "authors": "Rubén Rosas-Zaragoza, Martín Y. Cabrera-Garrido y Livia León-Paniagua"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "PRESENCIA DEL TIGRILLO (Leopardus wiedii) A TRAVÉS DE UN GRADIENTE URBANO-PERIURBANO EN MÉRIDA, YUCATÁN, MÉXICO",
+    "authors": "Javier Enrique Sosa-Escalante, Mircea G. Hidalgo-Mihart y Andrés Cruces-Casellas"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:30",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conflicto Humano-Fauna Silvestre",
+    "title": "PERCEPCIÓN SOCIAL E INTERACCIONES ENTRE PRODUCTORES DE MILPA MAYA Y MAMÍFEROS SILVESTRES EN YUCATÁN, MÉXICO",
+    "authors": "Verónica Alejandra González-Rodríguez, Luis Alexander Peña Peniche, Jorge Urdapilleta Carrasco, Javier Orlando Mijangos Cortés y María Dolores Cervera Montejano"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Divulgación de la ciencia",
+    "title": "MASTOCIENCIAS: CIENCIA, DOCENCIA Y CONSERVACIÓN",
+    "authors": "Nalleli E. Lara-Díaz y Zamira A. Ávila-Valle"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "NO TODAS LAS DECISIONES SON IGUALES: EFECTOS JERÁRQUICOS EN LOS MODELOS DE DISTRIBUCIÓN DE UN CARNÍVORO DE AMPLIA DISTRIBUCIÓN",
+    "authors": "Esmar O. Guzmán-Díaz, Juan Felipe Charre-Medellín, Salvador Mandujano, Pelayo Acevedo y Andrés Lira"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DEPREDADORES SILVESTRES Y SUS PRESAS POTENCIALES EN EL EJIDO LOS MANANTIALES, CAMPECHE, MÉXICO",
+    "authors": "Franco Gerardo Robles Guerrero, José Cortés Larriva y Marco Antonio Landero Miranday Luz Adriana Pérez Solano"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:45",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conflicto Humano-Fauna Silvestre",
+    "title": "INTERACCIONES HUMANO-OSO NEGRO (Ursus americanus) EN LA ZONA METROPOLITANA DE MONTERREY, NUEVO LEÓN, MÉXICO",
+    "authors": "Katya Lizeth Ortiz-Morales, Ana Elizabeth Antonio-Flores, Edgar Cruz-Acevedo, Guillermo Herrera-Pérez, Juan Luis Peña-Mondragón y Juan Antonio García-Salas"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "12:45",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Divulgación de la ciencia",
+    "title": "¿TU “PAPER” SOLO LO LEEN LOS REVISORES? EL VERDADERO IMPACTO DE DIVULGAR LA CIENCIA",
+    "authors": "Alina Gabriela Monroy-Gamboa"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "PEQUEÑOS MAMÍFEROS DE LOS HUMEDALES DE MONTAÑA EN SAN CRISTÓBAL DE LAS CASAS, CHIAPAS",
+    "authors": "Gloria Tapia-Ramírez, Cinthya Santiz Vázquez, Consuelo Lorenzo y Darío Navarrete"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Historia natural",
+    "title": "DOS SIGLOS DE COLECCIONES MASTOZOOLÓGICAS EN NORTEAMÉRICA: SESGOS HISTÓRICOS Y VACÍOS GEOGRÁFICOS",
+    "authors": "Leticia Cab-Sulub, Alina Gabriela Monroy-Gamboa y Sergio Ticul Álvarez-Castañeda"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:00",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conflicto Humano-Fauna Silvestre",
+    "title": "PÉRDIDAS ECONOMICAS EN LA PRODUCCIÓN AVÍCOLA DE SUBSISTENCIA ATRIBUIDAS A MESOCARNIVOROS Y OTROS DEPREDADORES EN LA SELVA LACANDONA",
+    "authors": "Christian Oswaldo Aguirre-Solórzano, Juan Pablo Esparza-Carlos y Juan Luis Peña-Mondragón"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:00",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "EVALUACIÓN ESPACIO-TEMPORAL DE LA INTEGRIDAD DEL HÁBITAT EN ESPECIES QUE SE DISTRIBUYEN EN AMBIENTES CONTRASTANTES DE HETEROMYIDAE EN MÉXICO",
+    "authors": "Luis Ricardo Solís Ruiz y Giovani Hernández Canchola"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "EFECTOS DE LA ESCALA EN LA CONECTIVIDAD Y VIABILIDAD DE MAMÍFEROS EN PAISAJES FRAGMENTADOS DE OAXACA",
+    "authors": "Eugenio Padilla Gómez, María Jesús Pérez Hernández y Miguel Briones Salas"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Historia natural",
+    "title": "APROXIMACIÓN HISTÓRICA DEL TAPIR CENTROAMERICANO (Tapirus bairdii) EN LA REGIÓN SUR DEL ISTMO DE TEHUANTEPEC, OAXACA",
+    "authors": "Fabio Flores Granados"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:15",
+    "venue": "Auditorio de Posgrado",
+    "type": "Ponencia",
+    "session": "Conflicto Humano-Fauna Silvestre",
+    "title": "INTERACCIÓN ENTRE MAMÍFEROS Y LA ACTIVIDAD APÍCOLA EN COMUNIDADES ALEDAÑAS A LA RESERVA DE LA BIOSFERA DE CALAKMUL",
+    "authors": "Héctor M. J. López Castilla, Fernando Contreras Moreno, José Mauricio Méndez Tun, William R. Cetzal Ix, Iván Tamayo Cen, Jesús F. Martínez Puc y Luis A. Lara Pérez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:15",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "DECOMISADOS ENTRE GARRAS, COLMILLOS Y PIELES",
+    "authors": "Marco A. Pérez Sandoval, Alondra Pérez-Robelo, Yolanda Hortelano-Moncada y Julieta Vargas-Cuenca"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:30",
+    "venue": "AULA BS101 Castor",
+    "type": "Ponencia",
+    "session": "Encuentro Mastozoológico",
+    "title": "Encuentro Mastozoológico",
+    "authors": ""
+  },
+  {
+    "day": "Jueves 22",
+    "time": "13:30",
+    "venue": "",
+    "type": "Logística",
+    "session": "Comida",
+    "title": "Comida",
+    "authors": ""
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "SESIÓN DE CARTELES III",
+    "title": "SESIÓN DE CARTELES III",
+    "authors": ""
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C1-XENARTROS DE MÉXICO: UN ANÁLISIS COMPARATIVO DE SU DISTRIBUCIÓN POTENCIAL, REPRESENTACIÓN EN COLECCIONES Y ESTADO DE CONSERVACIÓN",
+    "authors": "Víctor Manuel Ramírez-Ramos, Claudia Ballesteros-Barrera, Bárbara Vargas-Miranda, María del Rocío Zárate-Hernández, Angélica Martínez-Bernal y Selene Ortíz-Burgos"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C2-USO DE VEHÍCULOS AÉREOS NO TRIPULADOS PARA EL MONITOREO DE MADRIGUERAS DE Cynomys mexicanus",
+    "authors": "Elisa Paulina Zaragoza-Quintana, Andrés Eduardo Estrada-Castillón, Mauricio Cotera-Correa y José Manuel Mata-Balderas"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C3-NUEVO REGISTRO GEOGRÁFICO DE Amblyomma auricularium (ACARI: IXODIDAE) ASOCIADO A Sigmodon hispidus EN EL NORESTE DE MÉXICO",
+    "authors": "Gisela A. León-Espinosa, Hugo Alejandro Cuellar-Soto, Ester Lama-Moya, Evelyn Rios y Eduardo A. Rebollar-Téllez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C4-USO DE CÁMARAS TRAMPA PARA ESTIMAR LA ABUNDANCIA Y LA ESTRUCTURA POBLACIONAL DEL BORREGO CIMARRÓN EN BAJA CALIFORNIA, MÉXICO",
+    "authors": "Enrique de Jesús Ruiz-Mondragón, Fernando Isaac Gastelum-Mendoza, Guillermo Romero-Figueroa, Crystian-Sadiel Venegas Barrera, María Evarista Arellano-García, Israel Guerrero-Cárdenas, Eloy Alejandro Lozano-Cavazos y Raul Valdez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C5-VARIACIÓN ESTACIONAL DEL MICROBIOMA INTESTINAL DE Xerospermophilus perotensis",
+    "authors": "Edna Vanessa Díaz Ortiz, Emilio A. Suárez Domínguez, Alberto González-Romero, Rodolfo Martínez Mota y Sergio Albino Miranda"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C6-DIFERENCIAS MORFOMÉTRICAS EN DOS POBLACIONES DEL CONEJO CASTELLANO (Sylvilagus floridanus) DENTRO DE LA CIUDAD DE MÉXICO, MÉXICO",
+    "authors": "Ian Kaare Miranda-Miranda y Yolanda Hortelano-Moncada"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C7-ABUNDANCIA RELATIVA Y ASOCIACIÓN DE MAMÍFEROS SILVESTRES POR TIPO DE VEGETACIÓN EN DOS ESTRATEGIAS DE MANEJO",
+    "authors": "Helí Coronel-Arellano, Maya Rocha-Ortega, Ramón Ojeda-Moreno y Carmina E. Gutiérrez-González"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C8-USO DE TIENDAS POR MURCIÉLAGOS EN PETENES DEL NORTE DE YUCATÁN",
+    "authors": "Lorena Alejandrina Tzab-Hernández, Celia Isela Selem-Salas y Bernal Rodríguez-Herrera"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C9-CARACTERIZACIÓN E INTERPRETACIÓN BIOACÚSTICA DE LAS VOCALIZACIONES DE MURCIÉLAGOS REGISTRADAS EN LA REGIÓN DE CALAKMUL, CAMPECHE, MÉXICO",
+    "authors": "Johan Z. Baeza-Canul, Jorge A. Vargas-Contreras, Griselda Escalona-Segura, Rafael Robles-Reyes, José Luis Aragón-Gastelúm, Annery Serrano-Rodriguez y Sol de Mayo A. Mejenes-López"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C10-REHABILITACIÓN DE UN EJEMPLAR DE Eumops ferox (CHIROPTERA: MOLOSSIDAE) EN NUEVO LEÓN, MÉXICO",
+    "authors": "Dayana Michel Medrano-Hernández, Nayelli Rivera-Villanueva, Antonio Guzman-Velasco y Francisco Miguel Puente-Guevara"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C11-EFECTOS DE LA URBANIZACIÓN SOBRE LA COMUNIDAD DE MAMÍFEROS SILVESTRES EN DOS CAMPUS UNIVERSITARIOS DE MÉRIDA, YUCATÁN, MÉXICO",
+    "authors": "Juan Chablé-Santos, Javier Enrique Sosa-Escalante, Mircea G. Hidalgo-Mihart, Andrés Cruce-Casellas, Jorge Carlos Pool Tuz y Armín Tuz-Sulub"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C12-ABUNDANCIA Y PATRONES DE ACTIVIDAD DE LA NUTRIA MESOAMERICANA (Lontra annectens) EN EL RÍO PESCADOS, VERACRUZ, MÉXICO",
+    "authors": "Roberto Gabriel Sánchez Almaguer y Pablo César Hernández-Romero"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C13-ETNOZOOLOGÍA DEL VENADO COLA BLANCA (Odocoileus virginianus yucatanensis) EN NUEVO PLAN DE LA NORIA, MUNICIPIO DE JOSÉ MARÍA MORELOS, QUINTANA ROO",
+    "authors": "Litzi Gómez Hoy, Jorge López-Chan y Leopoldo Cutz-Pool"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C14-RIQUEZA, ABUNDANCIA Y PATRONES DE ACTIVIDAD DE MAMÍFEROS MEDIANOS Y GRANDES EN EL CERRO EL MESUDO, JUÁREZ, CHIHUAHUA",
+    "authors": "Oscar Daniel Quiñones-Gutiérrez, Jesús Manuel Martínez-Calderas y John Fredy Aristizabal Borja"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C15-MONITOREO COMUNITARIO PARA EVALUAR A LOS MAMÍFEROS MEDIANOS Y GRANDES EN ÁREAS PROTEGIDAS COMUNITARIAS EN EL SUR DE MÉXICO",
+    "authors": "R. Elena Galindo-Aguilar, Mario C. Lavariega, Beatriz Carely Luna-Olivera, Marcelino Ramírez-Ibáñez, Érika García-Casimiro, Eduardo Sánchez Soto, José Rogelio Prisciliano, Jaime M. Calderón-Patrón, Camelia E. Gómez-Herrera, Adriana Avendaño, Cristina Ruiz Canseco, Pável Palacios Chávez y Natalia Martin-Regalado"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C16-DISPERSIÓN ENDOZOÓCORA DE SEMILLAS POR CÁNIDOS EN BOSQUES SECOS TROPICALES DEL NEOTRÓPICO",
+    "authors": "Nallely Verónica Rodríguez-Santiago, Christian Alejandro Delfín-Alfonso, Eduardo Morteo-Ortiz y Cesar Isidro Carvajal-Hernández"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C17-RELACIÓN DE LA FRAGMENTACIÓN DEL HÁBITAT SOBRE LA COMUNIDAD DE MAMÍFEROS MEDIANOS Y GRANDES EN ATLAPEXCO, HIDALGO",
+    "authors": "Lorena Marcela Moreno Hernández, Malinalli Cortés Marcial e Iván Ernesto Roldán Aragón"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C18-IDENTIFICACIÓN MORFOLÓGICA Y MOLECULAR DE Ornithodoros marinkellei (IXODIDA: ARGASIDAE) SOBRE MURCIÉLAGOS DEL GÉNERO Pteronotus EN SONTECOMAPAN, VERACRUZ",
+    "authors": "Odette López-Rosas, Carmen Guzmán-Cornejo y Angel Herrera-Mares"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C19-CICLO REPRODUCTIVO Y DESARROLLO PRENATAL DE Natalus mexicanus EN UNA POBLACIÓN DEL ESTE DE MÉXICO",
+    "authors": "Fernando Salgado-Mejia, Nancy Yasmin Castelán-Villegas, Néstor Uriel Valdenegro-Brito, Gihovani Ademir Samano-Barbosa y Ricardo López-Wilchis"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C20-HISTORIA DE VIDA E INFECCIÓN VIRAL: PATRONES ECOLÓGICOS EN MURCIÉLAGOS EUROPEOS",
+    "authors": "Aline Méndez-Rodríguez, Federica Rossetto, Heliot Zarza, Ricardo López-Wilchis, H. Christoph Liedtke, Juan E. Echevarria y Javier Juste"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C21-COMPARACIÓN CROMOSÓMICA DE Heteromys irroratus DE PUEBLA",
+    "authors": "Rosa María González-Monroy, Jesús Martínez-Vázquez, Jocelin Itzel Martínez-Ruiz y Viridiana Méndez-Zamora"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C22-IMPORTANCIA CULTURAL Y USOS DE LOS MAMÍFEROS EN DOS COMUNIDADES DE ZAPOTITLÁN DE SALINAS, PUEBLA",
+    "authors": "Devani Campa-Serrano, David A. Prieto-Torres, Carlos Luna-Arangué y Pablo César Hernández-Romero"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C23-TOLERANCIA DE Desmodus rotundus A UN EVENTO DE PERTURBACIÓN EN UNA CUEVA DE LA SIERRA DE TABASCO",
+    "authors": "Julissa Rodríguez-Álvarez, Alba Rodas-Martínez y Rafael Ávila-Flores"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C24-ACTIVIDAD RELATIVA DE MAMÍFEROS MEDIANOS Y GRANDES EN UN GRADIENTE DE PERTURBACIÓN DEL MONUMENTO NATURAL CERRO DE LA SILLA, NUEVO LEÓN",
+    "authors": "Oscar Eduardo Covarrubias-Treviño, Juan Antonio Garcia-Salas, Alan Sergio López Villareal, Leonardo Samuel Esquivel Martinez, Daniel Daberat de Llano, Daniela Alejandra Trujillo-Avila, José Heriberto Vélez Garza, Marcos Loredo-Tovías, Luis Francisco Ibarra-Sánchez y Thania Cruz Guajardo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C25-EL PERRO COMO MODELO METODOLÓGICO PARA LA IDENTIFICACIÓN DE BACTERIAS PATÓGENAS EN MAMÍFEROS SILVESTRES",
+    "authors": "Uriel Briano-Ortiz, Gabriela Sánchez-Fabila y Roberto Moreno-Colín"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C26-ANÁLISIS CORRELACIONAL DE LOS FACTORES ASOCIADOS AL CONOCIMIENTO DE LOS MAMÍFEROS DE LA COMARCA LAGUNERA EN NIÑOS DE EDUCACIÓN BÁSICA",
+    "authors": "Andrea Flores Colón, María Estrada Leyva y Ángel Samuel de la Torre Esparza"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C27-RIQUEZA, ABUNDANCIA Y COMPOSICIÓN DE MURCIÉLAGOS EN ÁREAS VERDES URBANAS DE TEPIC, NAYARIT, MÉXICO",
+    "authors": "Gabriela Rosario Peña-Sandoval y Elsa Margarita Figueroa-Esquivel"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C28-DIVERSIDAD TAXONÓMICA Y FILOGENÉTICA DE MAMÍFEROS EN EL CERRO DEL CHUMIL EN JANTETELCO, MORELOS",
+    "authors": "Emmanuel Castro, Natalia Martín Regalado y Rachel M. Vallejo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C29-ACCIONES DE EDUCACIÓN AMBIENTAL PARA LA CONSERVACIÓN DEL OCELOTE (Leopardus pardalis) EN LA LOCALIDAD DE TEOCELO, VERACRUZ, MÉXICO",
+    "authors": "Javier Jerónimo-Aguilar y Blanca Elizabeth Cortina-Julio"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C30-ETOGRAMA DE TITÍ GOLDIE (Callimico goeldii) BAJO CUIDADO PROFESIONAL Y SU APLICACIÓN EN EL DISEÑO DE ENRIQUECIMIENTO AMBIENTAL",
+    "authors": "Karla Paola Garcia-Serbin, Norma Xanat Rodríguez-Barcena y Mayra Vianey Gómez-Naranjo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C31-DIVERSIDAD, ABUNDANCIA RELATIVA Y PATRONES DE ACTIVIDAD DE MAMÍFEROS MEDIANTE FOTOTRAMPEO EN SELVA BAJA CADUCIFOLIA EN QUILAMULA TLAQUILTENANGO, MORELOS",
+    "authors": "Ana Karen Vázquez Labra, Brisa Maciel Mercado Cabrera, Edgard David Mason Romo y Magally Arizbeth Flores Pérez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C32-ATROPELLAMIENTO DE MAMÍFEROS EN PANTANOS DE CENTLA: IMPLICACIONES PARA LA CONSERVACIÓN Y MANEJO DE UN HUMEDAL TROPICAL",
+    "authors": "Coral J. Pacheco-Figueroa, Juan de Dios Valdez-Leal, Ruth del C. Luna Ruíz, Joel C. Saenz, Angel Gabriel Hernández García, Ena E. Mata Zayas y Lilia Gama C."
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C33-INFLUENCIA DE LA HETEROGENEIDAD DEL HÁBITAT EN LA DIVERSIDAD DE MURCIÉLAGOS Y SUS ECTOPARÁSITOS EN EL SURESTE DE COAHUILA, MÉXICO",
+    "authors": "Erika J. Cruz-Bazan, Jorge E. Ramírez-Albores, Juan A. Encina-Domínguez, Juan M. Pech-Canché y Eber G. Chavez-Lugo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C34-DIVERSIDAD Y ECOLOGÍA REPRODUCTIVA DE LOS MURCIÉLAGOS EN EL SURESTE DE COAHUILA, MÉXICO",
+    "authors": "Mitzy Aylin Olivera-Triste, Miguel Ángel Mellado-Bosque, Nancy Guadalupe Uribe-Treviño, Francisco Alfonso Uribe-Treviño y Gabriel Moab Medellín-Rodríguez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C35-ENTRE EL MIEDO Y LA CONSERVACIÓN: RELACIÓN DE LOS ADOLESCENTES CON EL JAGUAR (Panthera onca)",
+    "authors": "Tatiana María Guzmán Guzmán, Juan. Pablo Esparza Carlos, Juan Luis Peña Mondragon, Peter Rijnaldus Wilhelmus Gerritsen y María Magdalena Ramírez Martínez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C36-MAMÍFEROS TERRESTRES EN BOSQUES TEMPLADOS Y HUERTOS FRUTALES DEL NORESTE DE MORELOS, MÉXICO: EVIDENCIA PARA SU CONSERVACIÓN",
+    "authors": "Miguel A. Márquez-Rivera, Elizabeth Arellano, Daryl D. Cruz y David Valenzuela-Galván"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C37-ABUNDANCIA Y PATRÓN DE ACTIVIDAD DE FELINOS SILVESTRES EN LA COMUNIDAD DE NUEVO PLAN DE LA NORIA, QUINTANA ROO",
+    "authors": "Diana Pastrana-Ontiveros, Jorge López-Chan y Leopoldo Cutz-Pool"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C38-COMPORTAMIENTO DEL VIEJO DE MONTE (Eira barbara) EN LA SELVA LACANDONA, CHIAPAS, MÉXICO",
+    "authors": "Mariana Ramírez-Díaz, Paulina Arroyo-Gerala, David A. Prieto-Torres, Zaira Y. González-Sausedo y Pablo C. Hernández-Romero"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C39-VARIACIÓN EN EL TAMAÑO DEL POLEN DE Agave TRANSPORTADO POR Leptonycteris nivalis Y Antrozous pallidus",
+    "authors": "Andrés Leonardo López Colunga, A. Nayelli Rivera-Villanueva, Antonio Guzmán-Velasco y Francisco Miguel Puente Guevara"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C40-INVENTARIO DE MAMÍFEROS EN UN BACHILLERATO TECNOLÓGICO DE TUXPAN, VERACRUZ",
+    "authors": "Mireya Sosa Jiménez, Ramón Elí Montiel Ariguznaga, Manuel Agustín Acevedo Hernández, Víctor Loaeza Victoriano, Rubén Cristóbal Vázquez, Carlos Miranda-Wing y Juan Manuel Pech-Canché"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C41-USO DE HÁBITAT ENTRE DOS ESPECIES SIMPÁTRICAS DE ARDILLAS EN LA ESTACIÓN DE BIOLOGÍA TROPICAL LOS TUXTLAS",
+    "authors": "J. Vladimir Rojas-Sánchez, Rosamond I. Coates, Víctor Sánchez-Cordero y José Juan Flores-Martínez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C42-ESTUDIO DE MAMÍFEROS MEDIANOS EN SELVA MEDIANA SUBPERENNIFOLIA Y BOSQUE MESÓFILO DE MONTAÑA HUAZALINGO, HIDALGO, MÉXICO",
+    "authors": "Jorge Arturo Rodríguez Hernández, Santiago Niño Maldonado, Alejandra López Mancilla, Vannia del Carmen Gómez Moreno e Irma Lara Pablo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C43-DIVERSIDAD DE QUIRÓPTEROS EN SEIS MUNICIPIOS DE LA REGIÓN COMARCA LAGUNERA, DURANGO, MÉXICO",
+    "authors": "Juan Antonio Zúñiga Arellano, Josué Raymundo Estrada Arellano, Ancelmo Orona Espino y Jesús Lumar Reyes Muñoz"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C44-DIVERSIDAD DE MURCIÉLAGOS INSECTÍVOROS EN UN GRADIENTE ALTITUDINAL DE LA RESERVA DE LA BIOSFERA SIERRA DE MANANTLÁN, JALISCO, MÉXICO",
+    "authors": "Roberto Arteaga-Torres, Luis Ignacio Iñiguez-Dávalos, Alejandro Marcial Rojo-Cruz y Martha Susana Zuloaga Aguilar"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C45-MURCIÉLAGOS DE LA RESERVA ZICUIRÁN-INFIERNILLO, MICHOACÁN: PASADO, PRESENTE Y PERSPECTIVAS",
+    "authors": "Iván Díaz Pacheco, Tiberio César Monterrubio-Rico, Joaquín Arroyo-Cabrales, Felipe León Silva, Hugo Zepeda Castro y María Luisa Herrera Arroyo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C46-EL ESFUERZO INVISIBLE DE LAS BALLENAS DURANTE EL AVISTAMIENTO",
+    "authors": "Diana Carolina Pérez Orozco, Gael Morales Calderón y Omar García Castañeda"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C47-DISTRIBUCIÓN ESPACIO-TEMPORAL DEL VENADO COLA BLANCA (Odocoileus virginianus) Y EL VENADO TEMAZATE (Mazama temama) EN EL CORREDOR BIOLÓGICO “EL CIELO-SIERRA DE TAMALAVE”, TAMAULIPAS",
+    "authors": "Grecia Fernanda Guerrero Copado, Leroy Soria-Díaz, Claudia C. Astudillo Sánchez, Guadalupe Treviño Barbosa y Arturo Mora Olivo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C48-PERSISTENCIA DE LA TUZA TROPICAL (Geomys tropicalis) EN ALTAMIRA, TAMAULIPAS: CONFIRMACIÓN DE PRESENCIA Y DELIMITACIÓN DEL ÁREA DE OCUPACIÓN",
+    "authors": "Uriel Fernando Moras Galeana, Jorge Luis Martínez Ávila, Roberto Márquez-Huitzil, Luis Francisco Ibarra Sánchez, Juan Antonio García Salas y Erick Mauricio Velázquez Castillo"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C49-MEGAPROYECTOS Y MURCIÉLAGOS: LA HISTORIA DE UNA COLONIA DE Mimon cozumelae DURANTE LA AMPLIACIÓN DE UNA CARRETERA",
+    "authors": "Karla P. Borges-Jesús y José D. Cú-Vizcarra"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C50-DINÁMICA POBLACIONAL DEL VENADO COLA BLANCA EN UNA PORCIÓN DEL ANP CERRO DEL CUBILETE, GUANAJUATO, MÉXICO",
+    "authors": "Antonio García-Méndez, Juan Longoria-González, Efrén Martín Hernández-Navarro y Milca Fernanda López-Hernández"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C51-MURCIÉLAGOS FRUGÍVOROS COMO POLINIZADORES RESILIENTES EN AMBIENTES URBANOS",
+    "authors": "Henry Fernando Dzul-Cauich y Celia Isela Selem Salas"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C52-REGISTRO NOTABLE DE Panthera onca EN DURANGO: IMPLICACIONES PARA EL MONITOREO NACIONAL Y LA CONSERVACIÓN REGIONAL",
+    "authors": "Erick Elio Chavez-Gurrola, Jesús Alberto Rodríguez-Maturino, Gerardo Daniel de León-Mata y Diego Filiberto Saad Rodríguez"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "15:00",
+    "venue": "Patio de aulas",
+    "type": "Cartel",
+    "session": "Sesión de carteles III",
+    "title": "C53-ECOMORFOLOGÍA DE MUSARAÑAS (EULIPOTYPHA: SORICIDAE) EN UN BOSQUE TEMPLADO DEL CENTRO DE MÉXICO",
+    "authors": "Luz E. Correa, Lázaro Guevara, Daniel Pichardo, José Juan Flores-Martínez y Víctor Sánchez-Cordero"
+  },
+  {
+    "day": "Jueves 22",
+    "time": "17:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Asamblea General Ordinaria",
+    "title": "Asamblea General Ordinaria",
+    "authors": ""
+  },
+  {
+    "day": "Viernes 23",
+    "time": "08:00",
+    "venue": "Patio de aulas",
+    "type": "Logística",
+    "session": "Registro",
+    "title": "Registro",
+    "authors": ""
+  },
+  {
+    "day": "Viernes 23",
+    "time": "09:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Conferencia magistral",
+    "session": "Conferencia magistral",
+    "title": "LOS NUEVOS CITADINOS DE LA RIVIERA MAYA: COEXISTIENDO CON LOS MONOS ARAÑA",
+    "authors": "Dra. Denise Spaan"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "10:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Evento AMMAC",
+    "title": "IN MEMORIAM, PREMIOS  TICUL ÁLVAREZ Y AMMAC",
+    "authors": "Gerardo Sánchez Rojas"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "11:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Receso",
+    "title": "Receso",
+    "authors": ""
+  },
+  {
+    "day": "Viernes 23",
+    "time": "11:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "COEXISTENCIA ESPACIO-TEMPORAL DE MAMÍFEROS DEPREDADORES Y SUS PRESAS POTENCIALES AL ESTE DEL VALLE DEL MEZQUITAL",
+    "authors": "Beida Odalis Ruiz Gutiérrez, Gerardo Sánchez Rojas, José Cuauhtémoc Chávez Tovar, Claudia Elizabeth Moreno Ortega e Iriana Leticia Zuria Jordan"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "11:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "MONITOREO DE LARGO PLAZO DE LA COMUNIDAD DE MAMÍFEROS EN LA RESERVA PRIVADA “EL ZAPOTAL”, PENÍNSULA DE YUCATÁN, MÉXICO",
+    "authors": "Anuar Hernández Saint Martin, Víctor Castelazo Calva, Luz Adriana Pérez Solano y Alexander Peña Peniche"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "11:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "TRASLAPE DE NICHO DE LA ZORRA GRIS (Urocyon cinereoargenteus) Y GATO MONTÉS (Lynx rufus) EN UNA UMA DE NUEVO LEÓN",
+    "authors": "David Alejandro Reyes-Reyes, Evelyn Rios y David Mercado-Morales"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "11:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "MAMÍFEROS SILVESTRES A LO LARGO DE UN GRADIENTE URBANO–PERIURBANO EN MÉRIDA, YUCATÁN, MÉXICO",
+    "authors": "Mircea G. Hidalgo-Mihart, Javier Enrique Sosa-Escalante, Andrés Cruces-Casellas y Juan Chablé-Santos"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "11:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "ENTRE LA CONSERVACIÓN Y LA GANADERÍA: INTERACCIONES TRÓFICAS EN LA COMUNIDAD DE CARNÍVOROS DEL NOROESTE DE MÉXICO",
+    "authors": "Jorge L. Reyes-Díaz, A. Edrei Cerón-Luna, A. Alondra Castro-Campillo, Nalleli E. Lara-Díaz y Carlos A. López-González"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "11:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "RIQUEZA Y DIVERSIDAD DE MAMÍFEROS MEDIANOS Y GRANDES DEL PARQUE ESTATAL CIÉNEGAS DEL FUERTE, TECOLUTLA, VERACRUZ",
+    "authors": "Fatima Orta-Orostico, Nalleli E. Lara-Díaz y Carlos A. López-González"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "12:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "DOS AÑOS DE SEGUIMIENTO A JAGUARES EN NUEVO LEÓN, MÉXICO",
+    "authors": "David Mercado-Morales, Jocelyn Salvador-Lara y Evelyn Rios"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "12:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DIFERENCIACIÓN DE NICHO ENTRE DOS LINAJES GENÉTICAMENTE DIVERGENTES DE Peropteryx macrotis",
+    "authors": "Emilio Nieblas Martínez y Isabela Vivas-Toro"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "12:15",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Ecología de poblaciones y comunidades",
+    "title": "ACTIVIDAD DEL JAGUAR Y SUS PRESAS POTENCIALES EN DIFERENTES ZONAS DE LA RESERVA ESTATAL SANTUARIO DEL MANATÍ BAHÍA DE CHETUMAL",
+    "authors": "Enrique Moreno-Caamal, Francisco Castañeda-Rivero y Jorge López-Chan"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "12:15",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "PROPINCUIDAD MEDIA DE Dasypus mexicanus Y CAMBIOS DE COBERTURA DE USO DEL SUELO Y VEGETACIÓN EN LA PORCIÓN ALTA DEL RÍO LA ANTIGUA, VERACRUZ",
+    "authors": "Luz María Luna Dorantes, Marco Antonio Espinoza-Guzmán, Alejandra Galindo Cruz y Francisco Javier Sahagún Sánchez"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "12:30",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Conservación y manejo",
+    "title": "PROPUESTA DE LINEAMIENTOS DE BIOÉTICA PARA EL TRABAJO CON MAMÍFEROS SILVESTRES EN MÉXICO",
+    "authors": "Edgard David Mason-Romo, Kinari Romo Hernández, Ibiza Martínez Serrano y Juan Cruzado Cortés"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "12:30",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "PERSISTENCIA Y NUEVAS LOCALIDADES DE LA NUTRIA NEOTROPICAL (Lontra annectens) EN EL ESTADO DE MÉXICO",
+    "authors": "Beatriz Morales-González, Cuauhtémoc Chávez, Enrique Martínez-Meyer y Juan Pablo Gallo-Reynoso"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "12:45",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Ponencia",
+    "session": "Métodos y herramientas para el estudio de mamíferos",
+    "title": "FORXIME PRO, PLATAFORMA INTUITIVA DE IA SOBERANA PARA FOTOTRAMPEO: AUTOMATIZANDO EL MONITOREO Y ANÁLISIS DE MAMÍFEROS EN MÉXICO",
+    "authors": "Erick Elio Chavez-Gurrola"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "12:45",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "RIQUEZA DE MAMÍFEROS MEDIANOS Y GRANDES EN UN FRAGMENTO DE VEGETACIÓN INTRAURBANO DE VILLAHERMOSA, TABASCO",
+    "authors": "Elisúa Sokey Espinosa-Ramos y Mircea Gabriel Hidalgo-Mihart"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "13:00",
+    "venue": "",
+    "type": "Logística",
+    "session": "Comida",
+    "title": "Comida",
+    "authors": ""
+  },
+  {
+    "day": "Viernes 23",
+    "time": "13:00",
+    "venue": "Auditorio Central",
+    "type": "Ponencia",
+    "session": "Biogeografía, diversidad y distribución de mamíferos",
+    "title": "DIVERSIDAD DE MAMÍFEROS MEDIANOS Y GRANDES DE LAS BARRANCAS DE LA REGIÓN NORPONIENTE DEL ESTADO DE MORELOS",
+    "authors": "Jesús Eduardo Gutiérrez-Dolores, Jesús Aparicio Pérez, Jesús Roberto Vázquez Castrejón, Juan Manuel Urióstegui-Velarde y José Antonio Guerrero"
+  },
+  {
+    "day": "Viernes 23",
+    "time": "15:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Entrega de reconocimientos",
+    "title": "Entrega de reconocimientos",
+    "authors": ""
+  },
+  {
+    "day": "Viernes 23",
+    "time": "16:00",
+    "venue": "Auditorio “Dr. Reyes S. Tamez Guerra”",
+    "type": "Logística",
+    "session": "Clausura",
+    "title": "Clausura",
+    "authors": ""
+  },
+  {
+    "day": "Viernes 23",
+    "time": "18:00",
+    "venue": "",
+    "type": "Logística",
+    "session": "Cena clausura",
+    "title": "Cena clausura",
+    "authors": ""
+  }
+];
