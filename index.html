@@ -66,6 +66,7 @@
     cursor: pointer;
   }
   .day-tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .day-tabs .now-btn { border-style: dashed; font-weight: bold; }
 
   .only-sel {
     border: 1px solid var(--border);
@@ -84,10 +85,20 @@
     border-radius: 8px;
     padding: .8rem 1rem;
     margin-bottom: .6rem;
+    scroll-margin-top: 3.2rem;
     display: grid;
     grid-template-columns: 70px 1fr auto;
     gap: .8rem;
     align-items: start;
+  }
+  h2 {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--bg);
+    margin: 0 0 .6rem;
+    padding: .4rem 0;
+    font-size: 1.1rem;
   }
   .event.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
   .event .time { font-weight: bold; font-size: 1rem; color: var(--accent); }
@@ -109,8 +120,29 @@
   .badge.cartel { background: #e3f2e3; color: #2e6b34; }
   .badge.magistral { background: #f5e3df; color: #8b3a2d; }
   .session-name { font-size: .8rem; color: var(--muted); font-style: italic; margin-top: .15rem; }
+  .clash {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: bold;
+    padding: .12rem .5rem;
+    border-radius: 999px;
+    margin-top: .25rem;
+    background: #fdecea;
+    color: #8b3a2d;
+  }
   .count { color: var(--muted); font-size: .9rem; margin: 0 0 .6rem; }
   .empty { text-align: center; color: var(--muted); padding: 3rem 0; }
+  .notice {
+    margin-top: .9rem;
+    font-size: .8rem;
+    color: var(--muted);
+    background: #efece4;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: .5rem .8rem;
+    line-height: 1.45;
+  }
+  .notice a { color: var(--accent); font-weight: 600; }
 
   .pick {
     justify-self: end;
@@ -191,8 +223,14 @@ const SHORT_TYPE = {
 };
 
 const DAY_ORDER = ["Lunes 19", "Martes 20", "Miércoles 21", "Jueves 22", "Viernes 23"];
+const DAY_DATES = { "Lunes 19": "2026-10-19", "Martes 20": "2026-10-20",
+                    "Miércoles 21": "2026-10-21", "Jueves 22": "2026-10-22",
+                    "Viernes 23": "2026-10-23" };
 
 const idOf = e => `${e.day}|${e.time}|${e.venue}|${e.title}`;
+
+// Normaliza texto para búsqueda sin distinción de acentos/mayúsculas
+const norm = s => (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
 function shortAuthors(a) {
   if (!a) return "";
@@ -208,6 +246,7 @@ function App() {
   const [type, setType] = useState("Todos");
   const [query, setQuery] = useState("");
   const [onlySelected, setOnlySelected] = useState(false);
+  const [goNow, setGoNow] = useState(false);
   const [selected, setSelected] = useState(() => {
     try { return new Set(JSON.parse(localStorage.getItem("cnm-mi-programa") || "[]")); }
     catch { return new Set(); }
@@ -231,22 +270,65 @@ function App() {
     return n;
   });
 
-  const days = useMemo(() => [...new Set(events.map(e => e.day))], [events]);
+  const todayName = useMemo(() => {
+    const d = new Date();
+    const iso = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0")
+              + "-" + String(d.getDate()).padStart(2, "0");
+    return Object.entries(DAY_DATES).find(([, v]) => v === iso)?.[0] || null;
+  }, []);
+
+  const days = useMemo(() =>
+    [...new Set(events.map(e => e.day))]
+      .sort((a, b) => DAY_ORDER.indexOf(a) - DAY_ORDER.indexOf(b))
+  , [events]);
   const venues = useMemo(() => [...new Set(events.map(e => e.venue))].sort(), [events]);
   const types = useMemo(() => [...new Set(events.map(e => e.type))].sort(), [events]);
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return events.filter(e =>
-      (day === "Todos" || e.day === day) &&
-      (venue === "Todos" || e.venue === venue) &&
-      (type === "Todos" || e.type === type) &&
-      (!onlySelected || selected.has(idOf(e))) &&
-      (!q || e.title.toLowerCase().includes(q) ||
-             e.authors.toLowerCase().includes(q) ||
-             e.session.toLowerCase().includes(q))
-    );
+    const q = norm(query.trim());
+    return events
+      .filter(e =>
+        (day === "Todos" || e.day === day) &&
+        (venue === "Todos" || e.venue === venue) &&
+        (type === "Todos" || e.type === type) &&
+        (!onlySelected || selected.has(idOf(e))) &&
+        (!q || norm(e.title).includes(q) ||
+               norm(e.authors).includes(q) ||
+               norm(e.session).includes(q))
+      )
+      .sort((a, b) =>
+        DAY_ORDER.indexOf(a.day) - DAY_ORDER.indexOf(b.day) ||
+        a.time.localeCompare(b.time) ||
+        a.venue.localeCompare(b.venue)
+      );
   }, [events, day, venue, type, query, onlySelected, selected]);
+
+  // Al pulsar "Ahora": desplázate al evento con hora de inicio más cercana a la actual
+  useEffect(() => {
+    if (!goNow) return;
+    setGoNow(false);
+    if (!filtered.length) return;
+    const now = new Date();
+    const mins = now.getHours() * 60 + now.getMinutes();
+    const toMins = t => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+    let best = filtered[0], bestDiff = Infinity;
+    for (const e of filtered) {
+      const d = Math.abs(toMins(e.time) - mins);
+      if (d < bestDiff) { bestDiff = d; best = e; }
+    }
+    document.getElementById("ev-" + filtered.indexOf(best))
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [goNow, filtered]);
+
+  // IDs de eventos seleccionados que chocan con otro seleccionado (mismo día y hora)
+  const clashes = useMemo(() => {
+    const mine = events.filter(e => selected.has(idOf(e)));
+    const c = new Set();
+    for (const e of mine) {
+      if (mine.some(o => o !== e && o.day === e.day && o.time === e.time)) c.add(idOf(e));
+    }
+    return c;
+  }, [events, selected]);
 
   const grouped = useMemo(() => {
     const g = {};
@@ -301,14 +383,21 @@ function App() {
         <p>19–23 de octubre de 2026</p>
       </header>
       <div className="container">
+        <p className="notice">
+          ⚠ Página experimental — puede contener errores; verifica siempre el programa oficial del congreso.
+          Programa por <a href="https://maevolab.mx/personas/luis.html" target="_blank" rel="noopener">Luis Verde Arregoitia</a> · INECOL.
+        </p>
         <div className="filters">
           <input type="search" placeholder="Buscar por título, autor o sesión…"
+                 aria-label="Buscar por título, autor o sesión"
                  value={query} onChange={e => setQuery(e.target.value)} />
-          <select value={venue} onChange={e => setVenue(e.target.value)}>
+          <select value={venue} onChange={e => setVenue(e.target.value)}
+                  aria-label="Filtrar por sede">
             <option>Todos</option>
             {venues.map(v => <option key={v}>{v}</option>)}
           </select>
-          <select value={type} onChange={e => setType(e.target.value)}>
+          <select value={type} onChange={e => setType(e.target.value)}
+                  aria-label="Filtrar por tipo de evento">
             <option>Todos</option>
             {types.map(t => <option key={t}>{t}</option>)}
           </select>
@@ -319,6 +408,11 @@ function App() {
         </div>
         <div className="day-tabs">
           <button className={day === "Todos" ? "active" : ""} onClick={() => setDay("Todos")}>Todos</button>
+          {todayName && (
+            <button className="now-btn" onClick={() => { setDay(todayName); setGoNow(true); }}>
+              ⏱ Ahora
+            </button>
+          )}
           {days.map(d => (
             <button key={d} className={day === d ? "active" : ""} onClick={() => setDay(d)}>{d}</button>
           ))}
@@ -338,7 +432,8 @@ function App() {
               const id = idOf(e);
               const sel = selected.has(id);
               return (
-                <div className={"event" + (sel ? " selected" : "")} key={id}>
+                <div className={"event" + (sel ? " selected" : "")} key={id}
+                     id={"ev-" + filtered.indexOf(e)}>
                   <div>
                     <div className="time">{e.time}</div>
                     <div className="venue">{e.venue}</div>
@@ -347,7 +442,12 @@ function App() {
                     <span className={"badge " + (BADGE_CLASS[e.type] || "")}>{e.type}</span>
                     <h3>{e.title}</h3>
                     {e.authors && <div className="authors">{e.authors}</div>}
-                    {e.type === "Simposio" && <div className="session-name">Simposio: {e.session}</div>}
+                    {e.session && e.type !== "Logística" && (
+                      <div className="session-name">{e.session}</div>
+                    )}
+                    {sel && clashes.has(id) && (
+                      <span className="clash" title="Tienes otro evento seleccionado a esta misma hora">⚠ traslape</span>
+                    )}
                   </div>
                   <button className={"pick" + (sel ? " on" : "")}
                           onClick={() => toggle(id)}
