@@ -150,6 +150,7 @@
     line-height: 1.45;
   }
   .notice a { color: var(--accent); font-weight: 600; }
+  .hint { font-size: .8rem; color: var(--muted); margin: 0 0 .4rem; }
 
   .pick {
     justify-self: end;
@@ -391,7 +392,7 @@ function App() {
       </header>
       <div className="container">
         <p className="notice">
-          ⚠ Página experimental — puede contener errores; verifica siempre el programa oficial del congreso.
+          ⚠ Página experimental y sujeta a cambios. Verifica siempre el programa oficial y las redes del congreso.
           Programada por <a href="https://maevolab.mx/personas/luis.html" target="_blank" rel="noopener">Luis Verde Arregoitia</a> · INECOL.
         </p>
         <div className="filters">
@@ -419,6 +420,7 @@ function App() {
             ★ Mi programa ({selected.size})
           </button>
         </div>
+        <p className="hint">Usa las estrellas para armar un programa personalizado</p>
         <div className="day-tabs">
           <button className={day === "Todos" ? "active" : ""} onClick={() => setDay("Todos")}>Todos</button>
           {todayName && (
