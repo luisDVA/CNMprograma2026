@@ -47,6 +47,13 @@
     border-radius: 6px;
     font-family: inherit;
   }
+  .filters .field { display: flex; flex-direction: column; gap: .15rem; }
+  .filters .field-label {
+    font-size: .68rem;
+    color: var(--muted);
+    letter-spacing: .03em;
+    padding-left: .15rem;
+  }
   .filters select {
     padding: .5rem;
     font-size: .95rem;
@@ -385,22 +392,28 @@ function App() {
       <div className="container">
         <p className="notice">
           ⚠ Página experimental — puede contener errores; verifica siempre el programa oficial del congreso.
-          Programa por <a href="https://maevolab.mx/personas/luis.html" target="_blank" rel="noopener">Luis Verde Arregoitia</a> · INECOL.
+          Programada por <a href="https://maevolab.mx/personas/luis.html" target="_blank" rel="noopener">Luis Verde Arregoitia</a> · INECOL.
         </p>
         <div className="filters">
           <input type="search" placeholder="Buscar por título, autor o sesión…"
                  aria-label="Buscar por título, autor o sesión"
                  value={query} onChange={e => setQuery(e.target.value)} />
-          <select value={venue} onChange={e => setVenue(e.target.value)}
-                  aria-label="Filtrar por sede">
-            <option>Todos</option>
-            {venues.map(v => <option key={v}>{v}</option>)}
-          </select>
-          <select value={type} onChange={e => setType(e.target.value)}
-                  aria-label="Filtrar por tipo de evento">
-            <option>Todos</option>
-            {types.map(t => <option key={t}>{t}</option>)}
-          </select>
+          <div className="field">
+            <span className="field-label">SEDE</span>
+            <select value={venue} onChange={e => setVenue(e.target.value)}
+                    aria-label="Filtrar por sede">
+              <option>Todos</option>
+              {venues.map(v => <option key={v}>{v}</option>)}
+            </select>
+          </div>
+          <div className="field">
+            <span className="field-label">TIPO</span>
+            <select value={type} onChange={e => setType(e.target.value)}
+                    aria-label="Filtrar por tipo de evento">
+              <option>Todos</option>
+              {types.map(t => <option key={t}>{t}</option>)}
+            </select>
+          </div>
           <button className={"only-sel" + (onlySelected ? " active" : "")}
                   onClick={() => setOnlySelected(v => !v)}>
             ★ Mi programa ({selected.size})
