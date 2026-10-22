@@ -1,0 +1,11 @@
+{
+  "name": "cnm-programa-build",
+  "private": true,
+  "description": "Herramientas para compilar la app del programa del congreso (ver ../build.sh)",
+  "dependencies": {
+    "esbuild": "^0.25.0",
+    "qrcode": "1.5.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
